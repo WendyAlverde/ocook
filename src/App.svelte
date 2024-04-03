@@ -10,6 +10,7 @@
   import Reviews from './lib/pages/Reviews.svelte'
   import AboutUs from './lib/pages/AboutUs.svelte'
   import LogForm from './lib/pages/LogForm.svelte'
+  import LegalNotice from './lib/pages/LegalNotice.svelte'
   import NotFound from './lib/pages/404.svelte'
 
   const routes = {
@@ -18,11 +19,11 @@
       "/reviews": Reviews,
       "/aboutus": AboutUs,
       "/logform": LogForm,
+      "/legalNotice": LegalNotice,
       "*": NotFound,
   }
 </script>
 
-
-  <Header />
-  <Router {routes} />
-  <Footer />
+<Header />
+<Router {routes} />
+<Footer />
