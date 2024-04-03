@@ -22,7 +22,6 @@
   }
 </script>
 
-
-  <Header />
-  <Router {routes} />
-  <Footer />
+<Header />
+<Router {routes} />
+<Footer />
