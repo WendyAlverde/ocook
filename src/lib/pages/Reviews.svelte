@@ -3,9 +3,9 @@
 </script>
 
 <main>
-
+    <h1 class="title" lang="en">Reviews</h1>
     <section class="backgroundsection">
-        <h2 class="title" lang="en">Reviews</h2>
+        
         <article class="framerestaurants">
             <img class="restaurants" src="nom-du-ficher" alt="premier restaurant" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->

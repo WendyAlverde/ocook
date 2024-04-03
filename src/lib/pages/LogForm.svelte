@@ -1,5 +1,9 @@
 <main>
     <h1>Formulaires</h1>
-    <h2>Se connecter</h2>
-    <h2>S'enregistrer</h2>
+    <section class="backgroundcomponent">
+        <h2>Se connecter</h2>
+    </section>
+    <section class="backgroundcomponent">
+        <h2>S'enregistrer</h2>
+    </section>
 </main>

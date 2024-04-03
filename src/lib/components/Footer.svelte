@@ -6,7 +6,7 @@
     <img src="../public/images/logo-big-blue.png" alt="Logo O'Cook">
     <nav role="navigation">
         <ul>
-            <li><a href="/aboutus" title="Mentions légales" use:link>Mentions légales</a></li>
+            <li><a href="/legalNotice" title="Mentions légales" use:link>Mentions légales</a></li>
             <li><a href="/aboutus" title="Page de contact" use:link>Contact</a></li>
         </ul>
         <li>
