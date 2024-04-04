@@ -1,6 +1,5 @@
-/* global style */
+/** global style **/
 * {
-    // border : solid 1px red; 
     box-sizing: border-box;
     list-style: none; 
     text-decoration: none; 
@@ -9,6 +8,10 @@
 @font-face{
     font-family: Madina;
     src: url(../../assets/font/Madina.ttf) format('truetype');
+    font-family: Chocolat;
+    src: url(../../assets/font/Chocolate.ttf) format('truetype');
+    font-family: Something;
+    src: url(../../assets/font/Something\ in\ the\ Cloud.ttf) format('truetype');
 }
 
 :root {
@@ -42,8 +45,44 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-/* header */
+.backgroundcomponent {
+    position: relative;
+}
 
+.backgroundsection {
+    background-color: var(--background-container);
+    margin: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+}
+
+.pagination {
+    margin: 1rem;
+    font-style: italic;
+    font-size : 1rem;
+    border: none;
+    background-color: var(--background-container);
+}
+
+.filter{
+    background-color: #B36235;
+    border-radius: 0.8rem;
+    color: var(--background-body);
+    margin: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border: none;
+}
+
+.filter p {
+    padding-top: 1rem;
+}
+
+/** Header **/
+
+/* Burger */
 // For burger
 // header nav {
 //     display: none;
@@ -86,10 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 .burger .bar::after {
     transform: translateY(0.5rem);
 }
-
-.backgroundcomponent {
-    position: relative;
-}
+/* Burger */
 
 .burgersearch {
     position: absolute;
@@ -145,8 +181,8 @@ margin: auto;
     float: right;
     padding: 0;
     position: relative;
-  }
-  
+}
+
 input[type="text"] {
     height: 5rem;
     font-size: 1rem;
@@ -208,43 +244,151 @@ header img {
     padding-top: 3rem; 
     padding-bottom: 0.2rem;  
 }
+/** Header **/ 
 
-// cards
-.backgroundsection {
-    background-color: var(--background-container);
-    margin: 1.5rem;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 0.5rem;
-    box-shadow: 0rem 0.25rem 0.25rem black;
+/** Homepage **/ 
+.backgroundsection.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/** Homepage **/
+
+/** Recipes **/ 
+.framerecipes {
+    width: 15rem;
+    height: 15rem;
 }
 
-/* code about us*/
+.recipes {
+    width: 4rem;
+}
+
+.formrecipes  {
+    background-color: var(--brown);
+    border-radius: 0.8rem;
+    color: var(--background-body);
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border: none;
+}
+/** Recipes **/ 
+
+/** About us **/
 input {
     margin-top: 1em;
-    height: 1.8em
-};
-button {
-    margin: 1em;
+    height: 2.3em;
+    width: 18em;
+    border-radius: 1.2em;
+    border-style: none;
 }
+
 textarea {
     margin-top: 1em;
     height: 10em;
     width: 18em;
+    border-radius: 1.2em;
+    border-style: none;
 }
+
 p {
     margin: 0.8em;
 }
 
-/* code homepage */   
-
-// Responsive Desktop
-@media screen and (min-width: 769px) {
-   
+h2.title {
+    font-family: Chocolate;
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
 }
 
+h1 {
+    font-family: Chocolate;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    margin-top: 1.3em;
+}
 
-/* code footer */
+p {
+    font-size: 1.3em;
+}
+
+.wrapper {
+    padding: 1.5rem 0;
+    filter: url('#goo');
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 0.5em;
+    line-height: 1;
+    border-radius: 0.7em;
+    position: relative;
+    min-width: 8.23em;
+    text-decoration: none;
+    font-size: 1.25rem;
+    background-color: #B36235;
+    color: #ffd5bd;
+    height: 2em;
+}
+
+.button:before,
+.button:after {
+    width: 4.4em;
+    height: 2.95em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background: var(--color);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+}
+
+.button:before {
+    top: -25%;
+    left: 20%;
+    background-color: #B36235;
+}
+
+.button:after {
+    bottom: -25%;
+    right: 20%;
+    background-color: #B36235;
+}
+
+.button:hover:before,
+.button:hover:after {
+    transform: none;
+}
+
+img {
+    border-radius: 1.2em;
+}
+
+.framerestaurants, .framerecipes {
+    margin: 10px; /* Ajustez selon votre mise en page */
+    text-align: center;
+    height: 14rem;
+    width: 20rem;
+    display: inline-block; 
+}
+
+.restaurants, .recipes {
+    height: 8rem;
+    width:8rem;   
+    border-radius: 0.5rem;
+}
+/** About us **/
+
+/** Responsive Desktop **/ 
+@media screen and (min-width: 769px) {
+
+}
+
 
 
 

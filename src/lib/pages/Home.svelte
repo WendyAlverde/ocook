@@ -54,64 +54,112 @@
     </section>
 
     <!-- cards-->
-    <section class="backgroundsection">
+    <section class="backgroundsection home">
         <h2 class="title">Nos recettes</h2>
         <article class="framerecipes">
             <img class="recipes" src="nom-du-ficher" alt="première recette" />
             <h3>Chili con carne</h3> <!--recipe title-->
             <p>Wendy Alverde</p> <!--author name-->
             <p>Plat</p> <!--category-->
-            <a href="/recipes" use:link>Voir plus</a>
+            <div class="wrapper">
+                <a class="button" href="/recipes" use:link>Voir plus</a>
+            </div>
+            
+            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
         </article>
         <article class="framerecipes">
             <img class="recipes" src="nom-du-ficher" alt="première recette" />
             <h3>Entrecôte</h3> <!--recipe title-->
             <p>Nicolas Ugé</p> <!--author name-->
             <p>Plat</p> <!--category-->
-            <a href="/recipes" use:link>Voir plus</a>
+            <div class="wrapper">
+                <a class="button" href="/recipes" use:link>Voir plus</a>
+            </div>
+            
+            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
         </article>
     </section>
 
-    <section class="backgroundsection">
+    <section class="backgroundsection home">
         <h2 class="title">Les restaurants</h2>
         <article class="framerestaurants">
             <img class="restaurants" src="nom-du-ficher" alt="premier restaurant" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->
             <p>5/5</p> <!-- rating --> 
-            <a href="/recipes" use:link>Voir plus</a> 
+            <div class="wrapper">
+                <a class="button" href="/reviews" use:link>Voir plus</a>
+            </div>
+            
+            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
         </article>
         <article class="framerecipes">
             <img class="restaurants" src="nom-du-ficher" alt="premier restaurant" />
             <h3>Les Cornettes </h3> <!--restaurant name-->
             <p>4/5</p> <!-- rating --> 
-            <a href="/recipes" use:link>Voir plus</a>
+            <div class="wrapper">
+                <a class="button" href="/reviews" use:link>Voir plus</a>
+            </div>
+            
+            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                </defs>
+            </svg>
         </article>
     </section>
 
     <!-- Filters -->
-    <section class="backgroundsection">
+    <section class="backgroundsection filters">
         <h2 class="title">Les filtres des recettes</h2>
-        <button role="button" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="apéritif" />
             <p>Appéritif</p>
         </button>
-        <button role="button" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="entrée" />
             <p>Entrée</p>
         </button>
-        <button role="button" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="plat" />
             <p>Plat</p>
         </button>
-        <button role="button" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="dessert" />
             <p>Dessert</p>
         </button>
-        <button role="button" aria-pressed="false">
+        <button role="button"class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="viande" />
             <p>Viande</p>
         </button>
-        <button role="button" aria-pressed="false">
+        <button role="button"class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="végétalien" />
             <p>Végétalien</p>
         </button>     
