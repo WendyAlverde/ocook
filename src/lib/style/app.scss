@@ -1,4 +1,4 @@
-/** global style **/
+/** ================ Start Global Style ================ **/ 
 * {
     box-sizing: border-box;
     list-style: none; 
@@ -7,18 +7,14 @@
 
 @font-face{
     font-family: Madina;
-    src: url(../../assets/font/Madina.ttf) format('truetype');
-    font-family: Chocolat;
-    src: url(../../assets/font/Chocolate.ttf) format('truetype');
-    font-family: Something;
-    src: url(../../assets/font/Something\ in\ the\ Cloud.ttf) format('truetype');
+    src: url(./Madina.ttf) format('truetype');
 }
 
-:root {
+:root { 
     /* if you set a size : 500px/16px = 31,25rem it's all coming together*/
     font-size: 16px;
     /* All the colors used on the site */
-    background-image: url(../../public/background/paper-textured-background.jpg);
+    background-image: url(../../public/images/background/paper-textured-background.jpg);
     --background-body: #ffffff;
     --brown: #B36235;
     --beige: #D88D60;
@@ -34,10 +30,6 @@
     --light-purple:#910A67;
 }
 
-.backgroundcomponent {
-    background-color: var(--background-container);
-}
-
 // Titles
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -45,7 +37,25 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+h1 {
+    font-family: Chocolate;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    margin-top: 1.3em;
+}
+
+h2.title {
+    font-family: Chocolate;
+    font-size: 1.3em;
+    letter-spacing: 0.3em;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+}
+/** ================ End Global Style ================ **/
+
+/** ================ Start Components ================ **/ 
 .backgroundcomponent {
+    background-color: var(--background-container);
     position: relative;
 }
 
@@ -58,6 +68,21 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0rem 0.25rem 0.25rem black;
 }
 
+input {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 2.3em;
+    width: 18em;
+    border-radius: 1.2em;
+    border-style: none;
+    padding: 0.5em;
+}
+
+img {
+    border-radius: 1.2em;
+}
+
+/*Recipes/Reviews*/
 .pagination {
     margin: 1rem;
     font-style: italic;
@@ -66,11 +91,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--background-container);
 }
 
-.filter{
+.filter {
     background-color: #B36235;
     border-radius: 0.8rem;
     color: var(--background-body);
-    margin: 1rem;
+    margin: 0.5rem;
     width: 6rem;
     height: 6rem;
     border: none;
@@ -80,24 +105,52 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 1rem;
 }
 
-/** Header **/
+.backgroundsection.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-/* Burger */
-// For burger
-// header nav {
-//     display: none;
-//     flex-direction: column;
-//     align-items: left;
-//     justify-content: space-between;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background-color: var(--background-container);
-//     width: 100%;
-//     height: 100vh;
-//     margin: 0;
-//     padding: 0.5rem 1rem;
-// }
+.framerestaurants, .framerecipes {
+    margin: 10px;
+    text-align: center;
+    height: 15rem;
+    width: 15rem;
+    display: inline-block; 
+}
+
+.restaurants, .recipes {
+    height: 8rem;
+    width: 8rem;   
+    border-radius: 0.5rem;
+}
+
+/** ================ End Components ================**/
+
+/** ================ Start Header ================**/
+header img {
+    padding-top: 3rem; 
+    padding-bottom: 0.2rem; 
+    width: 4rem;
+    display:block;
+    margin: auto; 
+}
+
+/* Start Burger */
+header nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--background-container);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
 
 .burger {
     background: none;
@@ -125,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 .burger .bar::after {
     transform: translateY(0.5rem);
 }
-/* Burger */
+/* End Burger */
 
 .burgersearch {
     position: absolute;
@@ -162,15 +215,6 @@ nav .menu {
     color: yellowgreen;
 }
 
-header img, footer img {
-    width: 4rem;
-}
-
-header img {
-display:block;
-margin: auto;
-}
-
 // search form
 #wrapsearch {
     margin-right: 0.10rem;
@@ -180,7 +224,6 @@ margin: auto;
     height: 3rem;
     float: right;
     padding: 0;
-    position: relative;
 }
 
 input[type="text"] {
@@ -188,7 +231,7 @@ input[type="text"] {
     font-size: 1rem;
     display: inline-block;
     font-weight: 100;
-    border: none;
+    border: noheader img;
     outline: none;
     color: var(--color-text);
     padding: 3px;
@@ -203,25 +246,23 @@ input[type="text"] {
     cursor: pointer;
 }
 
-// bottom bar search (height)
-input[type="text"]:focus:hover {
-    border-bottom: 0.3rem solid var(--color-text);
-}
-
 // search opening
 input[type="text"]:focus {
     width: 10rem;
     z-index: 1;
-    border-bottom: 0.3rem solid var(--color-text);
     cursor: text;
 }
+
 input[type="submit"] {
     height: 4rem;
     width: 3rem;
     display: inline-block;
     color: var(--color-text);
     float: right;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+    // search black
+    background: url(../../../public/images/logos/search.svg) center center no-repeat;
+    // search grey
+    // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
     background-size: 2rem;
     text-indent: -600rem;
     border: none;
@@ -230,41 +271,166 @@ input[type="submit"] {
     right: 0;
     z-index: 2;
     cursor: pointer;
-    opacity: 0.4;
-    cursor: pointer;
     transition: opacity .4s ease;
 }
+/** ================ End Header ================ **/
 
-// option
-// input[type="submit"]:hover {
-//     opacity: 0.8;
-// }
-
-header img {
-    padding-top: 3rem; 
-    padding-bottom: 0.2rem;  
-}
-/** Header **/ 
-
-/** Homepage **/ 
+/** ================ Start Homepage ================ **/  
 .backgroundsection.home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-/** Homepage **/
 
-/** Recipes **/ 
-.framerecipes {
-    width: 15rem;
-    height: 15rem;
+/* Start Carousel */
+$nb-slides: 4;
+
+.center {
+    display: flex;
+    align-items: center; // horizontal
+    justify-content: center; // vertical
 }
 
-.recipes {
-    width: 4rem;
+.carousel-wrapper {
+    display: flex;
+    position: relative;
+    max-width: 37rem;
+    margin: 3.1rem;
+
+    input {
+        display: none;
+    }
 }
 
+// carousel
+.carousel {
+    overflow: hidden;
+    border-radius: 0.9rem;
+    ul {
+        @extend .center;
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100% * $nb-slides;
+
+        transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    li {
+        width: 100%;
+    
+        img {
+            width: 100%;
+            height: 25rem;
+            object-fit: cover;
+        }
+    }
+}
+// navigation dots
+.nav-dot {
+    $dot-size: 0.9rem;
+    position: absolute;
+    cursor: pointer;
+    margin-left: -$dot-size / 2;
+    bottom: -$dot-size * 1.5;
+    width: $dot-size;
+    height: $dot-size;
+    opacity: .6;
+    background-color: var(--brown);
+    border-radius: 50%;
+    transition: .4s;
+
+    &:hover {
+        opacity: .8;
+        transform: scale(1.2);
+    }
+    
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+// goes from 1 to 5.
+@for $n from 1 through $nb-slides {
+    // arranges the navigation dots horizontally
+    .nav-dot[for=slide#{$n}] {
+      left: 50% + ((($n - 1) - (($nb-slides - 1)/ 2)) * 5%);
+    }
+    
+    #slide#{$n}:checked {
+        // moves the carousel to the right slide
+        & ~ .carousel ul { left: -100% * ($n - 1) }
+    
+        // highlights the selected navigation dot
+        & ~ .nav-dot[for=slide#{$n}] {
+            opacity: 1;
+        }
+    }
+}
+
+// ARROWS
+%arrow {
+    $arrow-size: 4rem;
+    display: none;  // hidden by default / if commented : Arrows can be seen better but no longer work
+    position: absolute;
+    cursor: pointer;
+    font-weight: bolder;
+    text-shadow: 0 0 0.4rem rgba($color: rgb(255, 255, 255), $alpha: 1);
+    top: 50%;
+    z-index: 1;
+    margin-top: -$arrow-size / 2;
+    height: $arrow-size;
+    font-size: $arrow-size;
+    transition: .2s;
+    
+    &:hover {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    &:active {
+        transform: scale(1.1);
+    }
+}
+
+.left-arrow {
+    @extend %arrow;
+    left: 15px;
+}
+
+.right-arrow {
+    @extend %arrow;
+    right: 15px;
+}
+
+@function custom-modulo($n) {
+    // this function returns '$n % $nb-slides', except that if the result is 0,
+    // '$nb-slides' is returned.
+    // for exemple, for $nb-slides = 4, possible values are {1, 2, 3, 4}
+    // (and not {0, 1, 2, 3}).
+    @return 1 + ($nb-slides + (($n - 1) % $nb-slides)) % $nb-slides;
+}
+
+@for $n from 1 through $nb-slides {
+    // when the nth slide is selected,
+    // displays the left-arrow that goes to the (n-1)th slide
+    // and the right arrow that goes to the (n+1)th slide.
+    // don't worry, it loops thanks to the 'custom-modulo' function !
+    #slide#{$n}:checked {
+        & ~ .left-arrow[for=slide#{custom-modulo($n - 1)}],
+        & ~ .right-arrow[for=slide#{custom-modulo($n + 1)}] {
+            display: block;
+        }
+    }
+}
+/* End Carousel */
+/** ================ End Homepage ================ **/ 
+
+/** ================ Start Recipes ================ **/ 
 .formrecipes  {
     background-color: var(--brown);
     border-radius: 0.8rem;
@@ -273,46 +439,36 @@ header img {
     margin: 1rem;
     border: none;
 }
-/** Recipes **/ 
+/** ================ End Recipes ================ **/
 
-/** About us **/
-input {
-    margin-top: 1em;
-    height: 2.3em;
-    width: 18em;
-    border-radius: 1.2em;
-    border-style: none;
-}
-
+/** ================ Start About us ================ **/
 textarea {
     margin-top: 1em;
-    height: 10em;
-    width: 18em;
+    min-height: 7em;
+    max-height: 10em;
+    min-width: 18em;
+    max-width: 25em;
     border-radius: 1.2em;
     border-style: none;
+    padding: 0.5em;
 }
 
-p {
+.aboutus p {
     margin: 0.8em;
-}
-
-h2.title {
-    font-family: Chocolate;
-    font-size: 1.3em;
-    letter-spacing: 0.3em;
-}
-
-h1 {
-    font-family: Chocolate;
-    font-size: 2em;
-    letter-spacing: 0.2em;
-    margin-top: 1.3em;
-}
-
-p {
     font-size: 1.3em;
 }
 
+.aboutNews, .leftPage, .backgroundsection .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presentation {
+    line-height: 1.5em;
+} 
+
+/* Start Buttons */
 .wrapper {
     padding: 1.5rem 0;
     filter: url('#goo');
@@ -364,32 +520,191 @@ p {
 .button:hover:after {
     transform: none;
 }
+/* End Buttons*/
+/** ================ End About us ================ **/
 
-img {
-    border-radius: 1.2em;
+/** ================ Start Logform ================ **/
+.mainlog {
+	// width: 22rem;
+	height: 31rem; //68vh
+	// background: red;
+	overflow: hidden;
+	// background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 0.625rem;
+	box-shadow: 0.313rem 1.25rem 3.125rem #000;
 }
 
-.framerestaurants, .framerecipes {
-    margin: 10px; /* Ajustez selon votre mise en page */
-    text-align: center;
-    height: 14rem;
-    width: 20rem;
-    display: inline-block; 
+#chk {
+	display: none;
 }
 
-.restaurants, .recipes {
-    height: 8rem;
-    width:8rem;   
-    border-radius: 0.5rem;
+.signup {
+	position: relative;
+	width:100%;
+	height: 100%;
 }
-/** About us **/
 
-/** Responsive Desktop **/ 
+.labelLogForm {
+	color: #030637;
+	font-size: 2.3rem;
+	justify-content: center;
+	display: flex;
+	margin: 3.75rem;
+	font-family: Madina;
+    font-size: 4rem;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+.inputLogForm {
+	width: 60%;
+	height: 2rem;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 1.25rem auto;
+	padding: 0.625rem;
+	border: none;
+	outline: none;
+	border-radius: 1.2rem;
+}
+
+.buttonlogin {
+	width: 60%;
+	height: 2.5rem;
+	margin: 0.625rem auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #B36235;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 1.25rem;
+	outline: none;
+	border: none;
+	border-radius: 1.2rem;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+.login {
+	height: 28.75rem;
+	background: #FFBE98;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+
+.login label {
+	color: #030637;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login {
+	transform: translateY(-500px);
+}
+
+#chk:checked ~ .login label {
+	transform: scale(0.8);	
+}
+
+#chk:checked ~ .signup label {
+	transform: scale(.6);
+}
+/** ================ End Logform ================ **/
+
+/** ================ Start Footer ================ **/
+.logofooter{
+    height: 6rem;
+    width: 6rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.linksfooter{
+    width: 18rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 6rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem; 
+}
+
+.navfooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socialicons  {
+    margin-left: 6rem;
+    margin-top: -6rem;
+    padding-bottom: 1rem;
+    width: 12rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;   
+}
+/** ================ End Footer ================ **/
+
+/** ================ Start Responsive Desktop ================ **/
 @media screen and (min-width: 769px) {
+    /** header **/
+    header nav {
+        display: contents;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    /**Recipes/Reviews**/ 
+    .filter {
+        margin: 1rem;
+    }
+
+    /** Start About us **/
+    .aboutMe {
+        display: flex;
+    }
+
+    .aboutMe p {
+        align-content: center;
+        line-height: 2em;
+    }
+
+    input#email {
+        width: 30em;
+    }
+
+    textarea#text {
+        width: 50em;
+    }
+
+    .backgroundsection .aboutNews {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    /** End About us **/
 
 }
 
+@media screen and (min-width: 1226px) {
+    /** Start About us **/
+    .contactNews {
+        display: flex; 
+        justify-content: space-evenly;
+    }
+    
+    .backgroundsection .left {
+        width: 60%;
+    }
 
-
-
-
+    .backgroundsection .right {
+        width: 30%;
+    }
+    /** End About us **/
+}

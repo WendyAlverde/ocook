@@ -9,13 +9,13 @@
             <img class="restaurants" src="../public/images/restaurants/restaurant-1.webp" alt="premier restaurant" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->
             <p>5/5</p> <!-- rating --> 
-            <a href="/reviews" use:link>Voir plus</a> 
+            <a href="/recipes" use:link>Voir plus</a> 
         </article>
         <article class="framerestaurants">
             <img class="restaurants" src="../public/images/restaurants/restaurant-2.webp" alt="second restaurant" />
             <h3>Les Cornettes </h3> <!--restaurant name-->
             <p>4/5</p> <!-- rating --> 
-            <a href="/reviews" use:link>Voir plus</a>
+            <a href="/recipes" use:link>Voir plus</a>
         </article>
             <article class="framerestaurants">
             <img class="restaurants" src="../public/images/restaurants/restaurant-3.webp" alt="troisieme restaurant" />
@@ -29,13 +29,13 @@
             <p>4/5</p> <!-- rating --> 
             <a href="/reviews" use:link>Voir plus</a>
         </article>
-        <div>
-            <button role="button" aria-pressed="false">1</button>
-            <button role="button" aria-pressed="false">2</button>
-            <button role="button" aria-pressed="false">3</button>
-            <button role="button" aria-pressed="false">4</button>
-            <button role="button" aria-pressed="false">5</button>
-            <button role="button" aria-pressed="false">6</button>
+        <div >
+            <button class="pagination" role="button" aria-pressed="false">1</button>
+            <button class="pagination" role="button" aria-pressed="false">2</button>
+            <button class="pagination" role="button" aria-pressed="false">3</button>
+            <button class="pagination" role="button" aria-pressed="false">4</button>
+            <button class="pagination" role="button" aria-pressed="false">5</button>
+            <button class="pagination" role="button" aria-pressed="false">6</button>
         </div>
     </section>
 </main>

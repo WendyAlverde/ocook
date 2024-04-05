@@ -39,13 +39,13 @@
                             <img src="../public/images/foods/tarte.webp" alt="">
                         </li>
                         <li>
-                            <!-- picture -->
+                            <img src="../public/images/foods/pates.webp" alt="">
                         </li>
                         <li>
-                            <!-- picture -->
+                            <img src="../public/images/foods/apero.webp" alt="">
                         </li>
                         <li>
-                            <!-- picture -->
+                            <img src="../public/images/foods/tarte.webp" alt="">
                         </li>
                     </ul>
                 </div>
@@ -155,14 +155,14 @@
             <img class="categories" src="nom-du-ficher" alt="dessert" />
             <p>Dessert</p>
         </button>
-        <button role="button"class="filter" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="viande" />
             <p>Viande</p>
         </button>
-        <button role="button"class="filter" aria-pressed="false">
+        <button role="button" class="filter" aria-pressed="false">
             <img class="categories" src="nom-du-ficher" alt="végétalien" />
             <p>Végétalien</p>
-        </button>     
+        </button>
     </section>
 </main>
 
