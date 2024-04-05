@@ -3,18 +3,16 @@
 </script>
 
 <footer class="backgroundcomponent" role="contentinfo">
-    <img src="../public/images/logo-big-blue.png" alt="Logo O'Cook">
-    <nav role="navigation">
-        <ul>
-            <li><a href="/legalNotice" title="Mentions légales" use:link>Mentions légales</a></li>
-            <li><a href="/aboutus" title="Page de contact" use:link>Contact</a></li>
-        </ul>
-        <li>
-            <ul>
-                <li><a href="https://www.facebook.com/votrepage" target="_blank" aria-label="Page Facebook de notre blog">Facebook</a></li>
-                <li><a href="https://www.instagram.com/votrepage" target="_blank" aria-label="Page Twitter de notre blog">Instagram</a></li>
-                <li><a href="https://twitter.com/votrepage" target="_blank" aria-label="Page Instagram de notre entreprise">Twitter</a></li>
+    <img class = "logofooter" src="../public/images/ocook-logo-blue.webp" alt="Logo O'Cook">
+        <nav class = "navfooter" role="navigation">
+            <ul class="socialicons">
+                <li><a href="#" target="_blank" aria-label="Page Facebook de notre blog"><img   src="../public/images/logos/facebook.png" alt="HTML tutorial" style="width:42px;height:42px;"></a></li>
+                <li><a href="#" target="_blank" aria-label="Page Twitter de notre blog"><img src="../public/images/logos/twitter.png" alt="HTML tutorial" style="width:42px;height:42px;"></a></li>
+                <li><a href="#" target="_blank" aria-label="Page Instagram de notre entreprise"><img src="../public/images/logos/instagram.png" alt="HTML tutorial" style="width:42px;height:42px;"></a></li>
             </ul>
-        </li>
-    </nav>
+            <ul class="linksfooter" >
+                <li><a href="/aboutus" title="Mentions légales" use:link>Mentions légales</a></li>
+                <li><a href="/aboutus" title="Page de contact" use:link>Contact</a></li>
+            </ul>
+        </nav>
 </footer>

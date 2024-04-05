@@ -13,7 +13,7 @@
                 <li class="forms"><a href="/logform" use:link>Formulaires</a></li>
             </ul>
         </nav>
-        <img src="../public/images/logo-big-blue.png" title="Logo du site O'cook" alt="O'cook-logo">
+        <img src="../public/images/ocook-logo-blue.webp" title="Logo du site O'cook" alt="O'cook-logo">
         <div class="burgersearch"> 
             <button role="button" aria-pressed="false" class="burger"><em class="bar"></em></button>
             <div id="wrapsearch">
