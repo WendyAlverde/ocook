@@ -25,5 +25,5 @@
 </script>
 
 <Header />
-<Router {routes} />
+  <Router {routes} />
 <Footer />

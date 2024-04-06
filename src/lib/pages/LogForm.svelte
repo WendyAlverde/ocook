@@ -7,7 +7,7 @@
 
     <div class="signup">
         <form>
-            <label class="labelLogform" for="chk" aria-hidden="true">S'enregistrer</label>
+            <label class="labelLogForm" for="chk" aria-hidden="true">S'enregistrer</label>
             <input class="inputLogForm" type="text" name="txt" placeholder="Nom d'utilisateur" required="">
             <input class="inputLogForm"type="email" name="email" placeholder="Adresse mail" required="">
             <input class="inputLogForm"type="password" name="pswd" placeholder="Mot de passe" required="">
@@ -18,7 +18,7 @@
 
     <div class="login">
         <form>
-            <label class="labelLogform" for="chk" aria-hidden="true">Se connecter</label>
+            <label class="labelLogForm" for="chk" aria-hidden="true">Se connecter</label>
             <input class="inputLogForm"type="text" name="txt" placeholder="Nom d'utilisateur" required="">
             <input class="inputLogForm"type="email" name="email" placeholder="Email" required="">
             <input class="inputLogForm"type="password" name="pswd" placeholder="Mot de passe" required="">
