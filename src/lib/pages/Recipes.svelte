@@ -3,7 +3,7 @@
 </script>
 
 <main>
-    <h2>Recettes</h2>
+    <h1>Recettes</h1>
 
     <section class="backgroundsection">
         <article class="framerecipes">

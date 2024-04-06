@@ -7,7 +7,11 @@
 
 @font-face{
     font-family: Madina;
-    src: url(./Madina.ttf) format('truetype');
+    src: url(../../assets/font/Madina.ttf) format('truetype');
+    font-family: Chocolat;
+    src: url(../../assets/font/Chocolate.ttf) format('truetype');
+    font-family: Something;
+    src: url(../../assets/font/Something\ in\ the\ Cloud.ttf) format('truetype');
 }
 
 :root { 
@@ -38,14 +42,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-family: Chocolate;
+    font-family: Chocolat;
     font-size: 2em;
     letter-spacing: 0.2em;
     margin-top: 1.3em;
 }
 
-h2.title {
-    font-family: Chocolate;
+h2 {
+    font-family: Chocolat;
     font-size: 1.3em;
     letter-spacing: 0.3em;
     margin-top: 0.9em;
@@ -208,11 +212,11 @@ nav .menu {
 }
 
 .menu a:hover{
-    background-color: rgb(211, 0, 176) ;
+    background-color: var(--dark-red) ;
 }
 
 .menu a:active {
-    color: yellowgreen;
+    color: var(--dark-purple);
 }
 
 // search form
@@ -615,10 +619,9 @@ textarea {
 
 /** ================ Start Footer ================ **/
 .logofooter{
-    height: 6rem;
-    width: 6rem;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    height: 5rem;
+    width: 5rem;
+    margin: 0.5rem;
 }
 
 .linksfooter{
