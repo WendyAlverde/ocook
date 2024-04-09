@@ -1,5 +1,6 @@
 <script>
     import {link} from "svelte-spa-router"
+    import pictureOcklecook from "../../assets/images/aboutus/phototest.jpg"
 </script>
 
 <main class="aboutus">
@@ -7,7 +8,7 @@
 
     <section class="backgroundsection">
         <div class="aboutMe">
-            <img class="profilePicture" src="../public/images/phototest.jpg" alt="Profil de l'auteur du site">
+            <img class="profilePicture" src={pictureOcklecook} alt="Profil de l'auteur du site">
             <p>
                 Bonjour ! Je suis Alice Ocklecook, passionnée de cuisine et créatrice de ce blog culinaire. Je partage ici mes recettes, astuces et inspirations pour vous aider à découvrir le plaisir de cuisiner et à éveiller vos papilles. Explorez mes créations et laissez-vous inspirer pour des moments gourmands inoubliables !
                 À bientôt autour de nos assiettes,
@@ -26,7 +27,17 @@
                 <textarea type="text" id="text" name="message" aria-label="Entrez votre message" placeholder="Votre message"></textarea>
                 <div class="wrapper">
                     <a class="button" href="#">Envoyer</a>
-                </div>           
+                </div>
+                
+                <!-- Filter: https://css-tricks.com/gooey-effect/ -->
+                <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                        </filter>
+                    </defs>
+                </svg>            
             </form>
         </section>
 
@@ -56,6 +67,6 @@
             Cordialement,<br>
             L'équipe O'cook</p>
         <p>© 2024 O'cook.</p>
-        <a href="/legalNotice" use:link>Mentions légales</a>
+        <a href="#">Mentions légales</a>
     </section>
 </main>

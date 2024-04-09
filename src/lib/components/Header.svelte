@@ -1,5 +1,7 @@
 <script>
     import {link} from "svelte-spa-router"
+    import ocooklogo from "../../assets/images/logos/ocook-logo-blue.webp"
+    import connectionicon from "../../assets/images/logos/connection.png"
 </script>
 
 <header role="banner" class="backgroundcomponent">
@@ -10,12 +12,12 @@
                 <li class=""><a href="/recipes" use:link>Recettes</a></li>
                 <li class=""><a href="/reviews" use:link>Critiques</a></li>
                 <li class=""><a href="/aboutus" use:link>À propos</a></li>
-                <li class="forms"><a href="/logform" use:link>Formulaires</a></li>
             </ul>
         </nav>
-        <img src="../public/images/ocook-logo-blue.webp" title="Logo du site O'cook" alt="O'cook-logo">
+        <img src={ocooklogo} alt="O'cook-logo">
         <div class="burgersearch"> 
             <button role="button" aria-pressed="false" class="burger"><em class="bar"></em></button>
+            <a href="/logform" use:link><img class="connexion" src={connectionicon}></a>
             <div id="wrapsearch">
                 <form action="" autocomplete="on">
                     <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
