@@ -7,11 +7,13 @@
 
 @font-face{
     font-family: Madina;
-    src: url(../../assets/font/Madina.ttf) format('truetype');
-    font-family: Chocolat;
-    src: url(../../assets/font/Chocolate.ttf) format('truetype');
-    font-family: Something;
-    src: url(../../assets/font/Something\ in\ the\ Cloud.ttf) format('truetype');
+    src: url(./Madina.ttf) format('truetype');
+ 
+    font-family:Chocolatee;
+    src: url(./Chocolatee.ttf) format('truetype');
+
+    font-family:Something-in-the-cloud;
+    src: url(./Something-in-the-cloud.ttf) format('truetype');
 }
 
 :root { 
@@ -42,14 +44,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-family: Chocolat;
+    font-family: Something-in-the-cloud;
     font-size: 2em;
     letter-spacing: 0.2em;
     margin-top: 1.3em;
 }
 
-h2 {
-    font-family: Chocolat;
+h2.title {
+    font-family: Chocolatee;
     font-size: 1.3em;
     letter-spacing: 0.3em;
     margin-top: 0.9em;
@@ -109,12 +111,6 @@ img {
     padding-top: 1rem;
 }
 
-.backgroundsection.filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .framerestaurants, .framerecipes {
     margin: 10px;
     text-align: center;
@@ -164,6 +160,7 @@ header nav {
     cursor: pointer;
     margin-right: 0.5rem;
     padding-left: 0.3rem;
+    margin-top: 1.1rem;
 }
 
 .burger .bar, .burger .bar::before, .burger .bar::after {
@@ -184,6 +181,7 @@ header nav {
 }
 /* End Burger */
 
+
 .burgersearch {
     position: absolute;
     top: 0;
@@ -192,6 +190,17 @@ header nav {
     flex-direction: row-reverse;
     align-items: center;
 }
+
+.connexion {
+    width: 2.2em;
+    padding-top: 1.2em;
+}
+
+input#search {
+    padding-top: 0;
+    margin-top: 0;
+}
+
 
 nav .menu {
     display: flex;/*1*/
@@ -212,11 +221,11 @@ nav .menu {
 }
 
 .menu a:hover{
-    background-color: var(--dark-red) ;
+    background-color: #DC5151 ;
 }
 
 .menu a:active {
-    color: var(--dark-purple);
+    color: #3C0753;
 }
 
 // search form
@@ -231,14 +240,13 @@ nav .menu {
 }
 
 input[type="text"] {
-    height: 5rem;
+    height: 4rem;
     font-size: 1rem;
     display: inline-block;
     font-weight: 100;
     border: noheader img;
     outline: none;
     color: var(--color-text);
-    padding: 3px;
     padding-right: 60px;
     width: 0px;
     position: absolute;
@@ -258,8 +266,8 @@ input[type="text"]:focus {
 }
 
 input[type="submit"] {
-    height: 4rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2rem;
     display: inline-block;
     color: var(--color-text);
     float: right;
@@ -267,7 +275,7 @@ input[type="submit"] {
     background: url(../../../public/images/logos/search.svg) center center no-repeat;
     // search grey
     // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
-    background-size: 2rem;
+    background-size: 1.6rem;
     text-indent: -600rem;
     border: none;
     position: absolute;
@@ -276,6 +284,7 @@ input[type="submit"] {
     z-index: 2;
     cursor: pointer;
     transition: opacity .4s ease;
+    
 }
 /** ================ End Header ================ **/
 
@@ -287,7 +296,8 @@ input[type="submit"] {
     align-items: center;
 }
 
-/* Start Carousel */
+/** ================ Start Carousel ================ **/  
+
 $nb-slides: 4;
 
 .center {
@@ -347,6 +357,7 @@ $nb-slides: 4;
     background-color: var(--brown);
     border-radius: 50%;
     transition: .4s;
+    
 
     &:hover {
         opacity: .8;
@@ -362,7 +373,7 @@ $nb-slides: 4;
 @for $n from 1 through $nb-slides {
     // arranges the navigation dots horizontally
     .nav-dot[for=slide#{$n}] {
-      left: 50% + ((($n - 1) - (($nb-slides - 1)/ 2)) * 5%);
+        left: calc(50% + ((#{$n} - 1) - ((#{$nb-slides} - 1) / 2)) * 40px);
     }
     
     #slide#{$n}:checked {
@@ -431,7 +442,8 @@ $nb-slides: 4;
         }
     }
 }
-/* End Carousel */
+/** ================ End Carousel ================ **/ 
+
 /** ================ End Homepage ================ **/ 
 
 /** ================ Start Recipes ================ **/ 
@@ -466,6 +478,11 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profilePicture {
+
+    object-fit: cover;
 }
 
 .presentation {
@@ -529,12 +546,9 @@ textarea {
 
 /** ================ Start Logform ================ **/
 .mainlog {
-	// width: 22rem;
-	height: 31rem; //68vh
-	// background: red;
+	height: 31rem;  
 	overflow: hidden;
-	// background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
-	border-radius: 0.625rem;
+	border-radius: 0.6rem;
 	box-shadow: 0.313rem 1.25rem 3.125rem #000;
 }
 
@@ -550,10 +564,9 @@ textarea {
 
 .labelLogForm {
 	color: #030637;
-	font-size: 2.3rem;
 	justify-content: center;
 	display: flex;
-	margin: 3.75rem;
+	margin: 3rem;
 	font-family: Madina;
     font-size: 4rem;
 	cursor: pointer;
@@ -566,8 +579,8 @@ textarea {
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
-	margin: 1.25rem auto;
-	padding: 0.625rem;
+	margin: 1.2rem auto;
+	padding: 0.6rem;
 	border: none;
 	outline: none;
 	border-radius: 1.2rem;
@@ -576,14 +589,14 @@ textarea {
 .buttonlogin {
 	width: 60%;
 	height: 2.5rem;
-	margin: 0.625rem auto;
+	margin: 0.6rem auto;
 	justify-content: center;
 	display: block;
 	color: #fff;
 	background: #B36235;
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: 1.25rem;
+	margin-top: 1.2rem;
 	outline: none;
 	border: none;
 	border-radius: 1.2rem;
@@ -619,9 +632,11 @@ textarea {
 
 /** ================ Start Footer ================ **/
 .logofooter{
-    height: 5rem;
-    width: 5rem;
-    margin: 0.5rem;
+    height: 6rem;
+    width: 6rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    object-fit: cover;
 }
 
 .linksfooter{
@@ -650,17 +665,13 @@ textarea {
     flex-direction: row;
     justify-content: space-around;   
 }
-
-.socialicons img {
-    margin-top: 1rem;
-    width: 2rem;
-    height: 2rem;
-}
 /** ================ End Footer ================ **/
 
 /** ================ Start Responsive Desktop ================ **/
 @media screen and (min-width: 769px) {
+    
     /** header **/
+
     header nav {
         display: contents;
     }
@@ -669,12 +680,29 @@ textarea {
         display: none;
     }
 
+    .burgersearch{
+        margin-bottom: 5em; 
+    }
+
+    .connexion {
+        width: 3em;
+    }
+
+    #search_submit {
+        background-size: 1.5rem;
+
+    }
+
+    /** End header **/
+
     /**Recipes/Reviews**/ 
+    
     .filter {
         margin: 1rem;
     }
 
     /** Start About us **/
+
     .aboutMe {
         display: flex;
     }
@@ -692,17 +720,19 @@ textarea {
         width: 50em;
     }
 
+    /** End About us **/
+
     .backgroundsection .aboutNews {
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
-    /** End About us **/
-
 }
 
 @media screen and (min-width: 1226px) {
+
     /** Start About us **/
+
     .contactNews {
         display: flex; 
         justify-content: space-evenly;
@@ -715,5 +745,4 @@ textarea {
     .backgroundsection .right {
         width: 30%;
     }
-    /** End About us **/
 }
