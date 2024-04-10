@@ -1,5 +1,12 @@
 <script>
     import {link} from "svelte-spa-router"
+
+    import apero from "../../assets/images/temporaire/apero.webp"
+    import pate from "../../assets/images/temporaire/pates.webp"
+    import restaurant1 from "../../assets/images/temporaire/restaurant-1.webp"
+    import restaurant2 from "../../assets/images/temporaire/restaurant-2.webp"
+    import restaurant3 from "../../assets/images/temporaire/restaurant-3.webp"
+    import restaurant4 from "../../assets/images/temporaire/restaurant-4.webp"
 </script>
 
 <main role="main">
@@ -36,16 +43,16 @@
                 <div class="carousel">
                     <ul>
                         <li>
-                            <img src="../public/images/foods/tarte.webp" alt="">
+                            <img src={apero} alt="">
                         </li>
                         <li>
-                            <img src="../public/images/foods/pates.webp" alt="">
+                            <img src={pate} alt="">
                         </li>
                         <li>
-                            <img src="../public/images/foods/apero.webp" alt="">
+                            <img src={restaurant1} alt="">
                         </li>
                         <li>
-                            <img src="../public/images/foods/tarte.webp" alt="">
+                            <img src={restaurant2} alt="">
                         </li>
                     </ul>
                 </div>
@@ -57,7 +64,7 @@
     <section class="backgroundsection home">
         <h2 class="title">Nos recettes</h2>
         <article class="framerecipes">
-            <img class="recipes" src="nom-du-ficher" alt="première recette" />
+            <img class="recipes" src={pate} alt="première recette" />
             <h3>Chili con carne</h3> <!--recipe title-->
             <p>Wendy Alverde</p> <!--author name-->
             <p>Plat</p> <!--category-->
@@ -76,7 +83,7 @@
             </svg>
         </article>
         <article class="framerecipes">
-            <img class="recipes" src="nom-du-ficher" alt="première recette" />
+            <img class="recipes" src={apero} alt="première recette" />
             <h3>Entrecôte</h3> <!--recipe title-->
             <p>Nicolas Ugé</p> <!--author name-->
             <p>Plat</p> <!--category-->
@@ -99,7 +106,7 @@
     <section class="backgroundsection home">
         <h2 class="title">Les restaurants</h2>
         <article class="framerestaurants">
-            <img class="restaurants" src="nom-du-ficher" alt="premier restaurant" />
+            <img class="restaurants" src={restaurant3} alt="premier restaurant" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->
             <p>5/5</p> <!-- rating --> 
             <div class="wrapper">
@@ -117,7 +124,7 @@
             </svg>
         </article>
         <article class="framerecipes">
-            <img class="restaurants" src="nom-du-ficher" alt="premier restaurant" />
+            <img class="restaurants" src={restaurant4} alt="premier restaurant" />
             <h3>Les Cornettes </h3> <!--restaurant name-->
             <p>4/5</p> <!-- rating --> 
             <div class="wrapper">
