@@ -1,10 +1,12 @@
 <script>
     import {link} from "svelte-spa-router"
     export let recipe
+
+    const imageBaseUrl = import.meta.env.VITE_API_BASE_URL + 'assets/'
 </script>
 
 <article class="framerecipes">
-    <img class="recipes" src="{recipe.picture}" alt="première recette" />
+    <img class="recipes" src="{imageBaseUrl + recipe.picture }" alt="Photo recette à dynamiser" />
     <h3>{recipe.name}</h3> <!--recipe title-->
     {#each recipe.users as user}
         <p>{user.first_name}</p> <!--author name-->
@@ -13,8 +15,30 @@
     {#each recipe.categories as category}
         <p>{category.Categories_id.name}</p>
     {/each}
-    <div class="wrapper">
-        <a class="button" href="/recipes" aria-label="Accéder à l'entièreté de la recette" use:link>Voir plus</a>
+    <div class="accordion-item wrapper" id="recette">
+        <a class="button accordion-link" aria-label="Accéder à l'entièreté de la recette" href="#recette" use:link>
+            Voir plus
+        </a>
+        <div class="answer">
+            <div class="headerRecipeAccordion">
+                <div class="recipename">
+                    <p>Nom de la recette</p> 
+                </div> <!--left-->
+                <div class="authorname">
+                    <p>nom de l'auteur</p>
+                </div> <!--right-->
+            </div>
+            <img class="imgRecipeAccordion" src="../public/images/foods/apero.webp" alt="">
+            <div class="footerRecipeAccordion">
+                <div class="ingredientsList">
+                    <p>Liste des ingrédients</p>
+                </div>
+                <div class="todoList">
+                    <p>Etapes de la recette</p>
+                </div>
+                <button id="closeBtnAccordion" role="button" type="button" aria-label="Fermer la recette">Fermer</button>
+            </div>
+        </div>
     </div>
     
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->

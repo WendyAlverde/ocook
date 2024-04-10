@@ -7,20 +7,20 @@
 
 @font-face{
     font-family: Madina;
-    src: url(./Madina.ttf) format('truetype');
- 
+    src: url(../../assets/fonts/Madina.ttf) format('truetype');
+
     font-family:Chocolatee;
-    src: url(./Chocolatee.ttf) format('truetype');
+    src: url(../../assets/fonts/Chocolatee.ttf) format('truetype');
 
     font-family:Something-in-the-cloud;
-    src: url(./Something-in-the-cloud.ttf) format('truetype');
+    src: url(../../assets/fonts/Something-in-the-cloud.ttf) format('truetype');
 }
 
 :root { 
     /* if you set a size : 500px/16px = 31,25rem it's all coming together*/
     font-size: 16px;
     /* All the colors used on the site */
-    background-image: url(../../public/images/background/paper-textured-background.jpg);
+    background-image: url(../../assets/images/backgrounds/paper-textured-background.jpg);
     --background-body: #ffffff;
     --brown: #B36235;
     --beige: #D88D60;
@@ -74,6 +74,8 @@ h2.title {
     box-shadow: 0rem 0.25rem 0.25rem black;
 }
 
+/** ================ End Components ================**/
+
 input {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -88,7 +90,8 @@ img {
     border-radius: 1.2em;
 }
 
-/*Recipes/Reviews*/
+/** ================  Start Recipes/Reviews ================**/
+
 .pagination {
     margin: 1rem;
     font-style: italic;
@@ -125,7 +128,7 @@ img {
     border-radius: 0.5rem;
 }
 
-/** ================ End Components ================**/
+/** ================  End Recipes/Reviews ================**/
 
 /** ================ Start Header ================**/
 header img {
@@ -181,7 +184,6 @@ header nav {
 }
 /* End Burger */
 
-
 .burgersearch {
     position: absolute;
     top: 0;
@@ -200,7 +202,6 @@ input#search {
     padding-top: 0;
     margin-top: 0;
 }
-
 
 nav .menu {
     display: flex;/*1*/
@@ -271,10 +272,7 @@ input[type="submit"] {
     display: inline-block;
     color: var(--color-text);
     float: right;
-    // search black
-    background: url(../../../public/images/logos/search.svg) center center no-repeat;
-    // search grey
-    // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+    background: url(../../assets/images/logos/search.svg) center center no-repeat;
     background-size: 1.6rem;
     text-indent: -600rem;
     border: none;
@@ -284,7 +282,6 @@ input[type="submit"] {
     z-index: 2;
     cursor: pointer;
     transition: opacity .4s ease;
-    
 }
 /** ================ End Header ================ **/
 
@@ -296,8 +293,7 @@ input[type="submit"] {
     align-items: center;
 }
 
-/** ================ Start Carousel ================ **/  
-
+/** ==== Start Carousel ==== **/  
 $nb-slides: 4;
 
 .center {
@@ -442,8 +438,7 @@ $nb-slides: 4;
         }
     }
 }
-/** ================ End Carousel ================ **/ 
-
+/** ===== End Carousel ==== **/ 
 /** ================ End Homepage ================ **/ 
 
 /** ================ Start Recipes ================ **/ 
@@ -455,7 +450,142 @@ $nb-slides: 4;
     margin: 1rem;
     border: none;
 }
+
+/** ====Start Accordion Recipes ==== **/
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--brown);
+    transition: max-height 650ms;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+}
+
+.answer.closed {
+    display: none;
+}
+.answer p, .answer li {
+    color: var(--color-text);
+    font-size: 15px;
+    padding: 2rem;
+}
+
+.accordion-item:target .answer {
+    max-height: 40rem;
+}
+
+.accordion-item:target .accordion-link {
+    display: none
+}
+
+.accordion-item:target .accordion-link {
+    display: block;
+}
+
+.headerRecipeAccordion{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em auto;
+}
+
+.imgRecipeAccordion {
+    width : 10rem;
+    height : 10rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+}
+
+.recipename, .authorname{
+    background-color: var(--background-container);
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    width: 6em;
+    height:3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredientsList, .todoList{
+    background-color: var(--background-container);
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerRecipeAccordion{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+}
+
+#closeBtnAccordion {
+    background-color: var(--background-container);
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    width: 7em;
+    margin-left: 8.6em;
+}
+
+/** ==== End Accordion Recipes ==== **/
 /** ================ End Recipes ================ **/
+
+/** ================ Start Reviews ================ **/
+
+/** ==== Start Accordion Reviews ==== **/
+
+.headerReviewsAccordion{
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+    background-color: var(--background-container);
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+}
+
+.reviewname{
+    background-color: var(--background-container);
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    width: 13em;
+    height:5em;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.footerReviewsAccordion{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 1em;
+    background-color: var(--background-container);
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourOpinion {
+    background-color: var(--background-container);
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.25rem black;
+    width: 13em;
+    height:10em;
+    padding-top: 0.5em;
+}
+/** ==== End Accordion Reviews ==== **/
+/** ================ End Reviews ================ **/
 
 /** ================ Start About us ================ **/
 textarea {
@@ -481,7 +611,6 @@ textarea {
 }
 
 .profilePicture {
-
     object-fit: cover;
 }
 
@@ -489,7 +618,7 @@ textarea {
     line-height: 1.5em;
 } 
 
-/* Start Buttons */
+/** ================ Start Buttons ================ **/
 .wrapper {
     padding: 1.5rem 0;
     filter: url('#goo');
@@ -529,7 +658,7 @@ textarea {
     top: -25%;
     left: 20%;
     background-color: #B36235;
-}
+}    
 
 .button:after {
     bottom: -25%;
@@ -541,11 +670,11 @@ textarea {
 .button:hover:after {
     transform: none;
 }
-/* End Buttons*/
+/** ================ End Buttons ================ **/
 /** ================ End About us ================ **/
 
 /** ================ Start Logform ================ **/
-.mainlog {
+.mainlog {    
 	height: 31rem;  
 	overflow: hidden;
 	border-radius: 0.6rem;
@@ -595,7 +724,7 @@ textarea {
 	color: #fff;
 	background: #B36235;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: bold;    
 	margin-top: 1.2rem;
 	outline: none;
 	border: none;
@@ -671,7 +800,6 @@ textarea {
 @media screen and (min-width: 769px) {
     
     /** header **/
-
     header nav {
         display: contents;
     }
@@ -690,19 +818,15 @@ textarea {
 
     #search_submit {
         background-size: 1.5rem;
-
     }
-
     /** End header **/
 
     /**Recipes/Reviews**/ 
-    
     .filter {
         margin: 1rem;
     }
 
     /** Start About us **/
-
     .aboutMe {
         display: flex;
     }
@@ -719,7 +843,6 @@ textarea {
     textarea#text {
         width: 50em;
     }
-
     /** End About us **/
 
     .backgroundsection .aboutNews {
@@ -732,7 +855,6 @@ textarea {
 @media screen and (min-width: 1226px) {
 
     /** Start About us **/
-
     .contactNews {
         display: flex; 
         justify-content: space-evenly;
@@ -744,5 +866,13 @@ textarea {
 
     .backgroundsection .right {
         width: 30%;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .backgroundsection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

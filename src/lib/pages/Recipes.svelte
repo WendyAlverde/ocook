@@ -6,7 +6,7 @@
     async function getRecipes() {
     // 1. appeler l'API de Directus
         // 1.1 récupérer l'URL du endpoint
-        const endpoint = import.meta.env.VITE_API_BASE_URL + "items/Recipes?fields=*,categories.Categories_id.name,Users_id.first_name"
+        const endpoint = import.meta.env.VITE_API_BASE_URL + "items/Recipes?fields=*,categories.Categories_id.name,users.first_name"
 
         // 1.2 faire une requête HTTP au endpoint
         const response = await fetch(endpoint)
@@ -28,7 +28,7 @@
 
 
 <main>
-    <h1>Recettes</h1>
+    <h1 class="title">Recettes</h1>
 
     <section class="backgroundsection">
         {#await recipes}
