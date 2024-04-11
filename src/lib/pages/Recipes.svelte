@@ -1,6 +1,8 @@
 <script>
     import {link} from "svelte-spa-router"
 
+    import Pagination from "../components/Pagination.svelte";
+    import Filter from "../components/Filter.svelte";
     import RecipeCard from "../components/RecipeCard.svelte";
 
     async function getRecipes() {
@@ -26,7 +28,6 @@
 
 </script>
 
-
 <main>
     <h1 class="title">Recettes</h1>
 
@@ -39,46 +40,12 @@
             {/each}
         {/await}
 
-        <div >
-            <button class="pagination" role="button" aria-pressed="false">1</button>
-            <button class="pagination" role="button" aria-pressed="false">2</button>
-            <button class="pagination" role="button" aria-pressed="false">3</button>
-            <button class="pagination" role="button" aria-pressed="false">4</button>
-            <button class="pagination" role="button" aria-pressed="false">5</button>
-            <button class="pagination" role="button" aria-pressed="false">6</button>
-        </div>
-        
+        <Pagination />
     </section>
 
     <section class="backgroundsection">
         <button role="button" class="formrecipes" aria-pressed="false">Ajouter une recette ?</button>
     </section>
 
-    <section class="backgroundsection">
-        <h2 class="title">Les filtres des recettes</h2>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="apéritif" />
-            <p>Appéritif</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="entrée" />
-            <p>Entrée</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="plat" />
-            <p>Plat</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="dessert" />
-            <p>Dessert</p>
-        </button>
-        <button role="button"class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="viande" />
-            <p>Viande</p>
-        </button>
-        <button role="button"class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="végétalien" />
-            <p>Végétalien</p>
-        </button>     
-    </section>
+    <Filter />
 </main>

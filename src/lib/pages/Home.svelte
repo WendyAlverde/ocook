@@ -1,6 +1,8 @@
 <script>
     import {link} from "svelte-spa-router"
 
+    import Filter from "../components/Filter.svelte";
+    
     import apero from "../../assets/images/temporaire/apero.webp"
     import pate from "../../assets/images/temporaire/pates.webp"
     import restaurant1 from "../../assets/images/temporaire/restaurant-1.webp"
@@ -144,32 +146,6 @@
     </section>
 
     <!-- Filters -->
-    <section class="backgroundsection filters">
-        <h2 class="title">Les filtres des recettes</h2>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="apéritif" />
-            <p>Appéritif</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="entrée" />
-            <p>Entrée</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="plat" />
-            <p>Plat</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="dessert" />
-            <p>Dessert</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="viande" />
-            <p>Viande</p>
-        </button>
-        <button role="button" class="filter" aria-pressed="false">
-            <img class="categories" src="nom-du-ficher" alt="végétalien" />
-            <p>Végétalien</p>
-        </button>
-    </section>
+    <Filter />
 </main>
 
