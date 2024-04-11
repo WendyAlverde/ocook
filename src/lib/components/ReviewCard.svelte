@@ -6,6 +6,7 @@
 
     const imageBaseUrl = import.meta.env.VITE_API_BASE_URL + 'assets/'
     
+    console.log(review)
 </script>
 
 <article class="framerestaurants">
@@ -15,7 +16,7 @@
     <h3>{review.restaurant.name}</h3>
     <p>{review.restaurant.rating}</p>
 
-    <a class="button" href="/reviews" aria-label="Accéder à l'entièreté de la critique" use:link>Voir plus</a> 
+    <a class="button" href="/reviews" aria-label="Accéder à l'entièreté de la critique" use:link>Voir plus</a> <!---->
 
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">

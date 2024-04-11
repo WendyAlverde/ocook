@@ -3,20 +3,31 @@
     export let recipe
 
     const imageBaseUrl = import.meta.env.VITE_API_BASE_URL + 'assets/'
+
+    // accordion closure
+    // document.addEventListener("DOMContentLoaded", function() {
+    // const closeBtn = document.getElementById("closeBtnAccordion");
+
+    // closeBtn.addEventListener("click", function() {
+    //     const accordion = document.querySelector(".answer");
+    //     accordion.classList.toggle("closed"); // Adds or deletes the "closed" accordion class
+    //     });
+    // });
 </script>
 
 <article class="framerecipes">
-    <img class="recipes" src="{imageBaseUrl + recipe.picture }" alt="Photo recette à dynamiser" />
+    {#if recipe.picture}
+        <img class="recipes" src="{ imageBaseUrl + recipe.picture }" alt="première recette" />
+    {/if}
+    <!-- else : add picture  -->
     <h3>{recipe.name}</h3> <!--recipe title-->
-    {#each recipe.users as user}
-        <p>{user.first_name}</p> <!--author name-->
-        {console.log(user)}
-    {/each}
+    <p>{recipe.users.first_name}</p> <!--author name-->
     {#each recipe.categories as category}
         <p>{category.Categories_id.name}</p>
     {/each}
+
     <div class="accordion-item wrapper" id="recette">
-        <a class="button accordion-link" aria-label="Accéder à l'entièreté de la recette" href="#recette" use:link>
+        <a class="button accordion-link" aria-label="Accéder à l'entièreté de la recette"> <!--href="#recette" use:link-->
             Voir plus
         </a>
         <div class="answer">
@@ -25,7 +36,7 @@
                     <p>Nom de la recette</p> 
                 </div> <!--left-->
                 <div class="authorname">
-                    <p>nom de l'auteur</p>
+                    <p>Nom de l'auteur</p>
                 </div> <!--right-->
             </div>
             <img class="imgRecipeAccordion" src="../public/images/foods/apero.webp" alt="">
