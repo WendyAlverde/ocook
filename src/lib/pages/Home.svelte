@@ -90,7 +90,7 @@
             <p>Nicolas Ugé</p> <!--author name-->
             <p>Plat</p> <!--category-->
             <div class="wrapper">
-                <a class="button" href="/recipes" use:link>Voir plus</a>
+                <a class="button" role="button" href="/recipes" use:link>Voir plus</a>
             </div>
             
             <!-- Filter: https://css-tricks.com/gooey-effect/ -->

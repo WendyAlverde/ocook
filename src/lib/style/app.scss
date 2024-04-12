@@ -8,10 +8,14 @@
 @font-face {
     font-family: Madina;
     src: url(../../assets/fonts/Madina.ttf) format('truetype');
+}
 
+@font-face {
     font-family: Chocolatee;
     src: url(../../assets/fonts/Chocolatee.ttf) format('truetype');
+}
 
+ @font-face {
     font-family: Something-in-the-cloud;
     src: url(../../assets/fonts/Something-in-the-cloud.ttf) format('truetype');
 }
@@ -67,8 +71,9 @@ h2.title {
 
 /** ================ Start Components ================ **/
 .backgroundcomponent {
-    background-color: var(--background-container);
+    background-color: var(--button);
     position: relative;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem black;
 }
 
 .backgroundsection {
@@ -98,7 +103,8 @@ img {
 
 /** ================ Start Header ================**/
 .header  {
-    background-color: var(--beige);
+    background-color:var(--button);
+    box-shadow: 0rem 0.25rem 0.25rem black;
 }
 
 header img {
@@ -128,7 +134,7 @@ $transition-delay: 0.05s;
 #toggle:checked {
     //Any element you need to change the style if menu is open goes here, using the sibling selector (~)
     &~.toggle-container .button-toggle {
-        box-shadow: 0 0 0 12.5rem #FFD5BD, inset 0 0 0 1.5rem #FFD5BD;
+        box-shadow: 0 0 0 12.5rem #D88D60, inset 0 0 0 1.5rem #FFBE98;
         
         &:before {
             transform: translateY(-50%) rotate(45deg) scale(1);
@@ -250,7 +256,7 @@ $transition-delay: 0.05s;
     transform: scaleY(0.2);
     transition: $transition-duration, opacity 1s;
     border-radius: 90%;
-    font-family: Madina;
+    // font-family: Madina;
 
     //Set delays for the nav items in close transition
     @for $i from 1 through $items {
