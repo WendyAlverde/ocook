@@ -1,7 +1,4 @@
 <script>
-    import {link} from "svelte-spa-router"
-
-    import Pagination from "../components/Pagination.svelte";
     import Filter from "../components/Filter.svelte";
     import RecipeCard from "../components/RecipeCard.svelte";
 
@@ -21,12 +18,14 @@
 
     // 3. retourner les recettes
         return json.data
+
     }
 
     // 4. mettre les recettes dans la variable recipes
     const recipes = getRecipes()
 
 </script>
+
 
 <main>
     <h1 class="title">Recettes</h1>
@@ -40,11 +39,19 @@
             {/each}
         {/await}
 
-        <Pagination />
+        <div >
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 1">1</button>
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 2">2</button>
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 3">3</button>
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 4">4</button>
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 5">5</button>
+            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 6">6</button>
+        </div>
+        
     </section>
 
     <section class="backgroundsection">
-        <button role="button" class="formrecipes" aria-pressed="false">Ajouter une recette ?</button>
+        <button role="button" class="formrecipes" aria-pressed="false" aria-label="Ajouter une recette">Ajouter une recette ?</button>
     </section>
 
     <Filter />
