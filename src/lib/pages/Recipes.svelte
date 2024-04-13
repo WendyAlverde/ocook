@@ -1,6 +1,9 @@
 <script>
+    import {link} from "svelte-spa-router"
+
     import Filter from "../components/Filter.svelte";
     import RecipeCard from "../components/RecipeCard.svelte";
+    import Pagination from "../components/Pagination.svelte";
 
     async function getRecipes() {
     // 1. appeler l'API de Directus
@@ -18,14 +21,12 @@
 
     // 3. retourner les recettes
         return json.data
-
     }
 
     // 4. mettre les recettes dans la variable recipes
     const recipes = getRecipes()
 
 </script>
-
 
 <main>
     <h1 class="title">Recettes</h1>
@@ -39,14 +40,7 @@
             {/each}
         {/await}
 
-        <div >
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 1">1</button>
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 2">2</button>
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 3">3</button>
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 4">4</button>
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 5">5</button>
-            <button class="pagination" role="button" aria-pressed="false" aria-label="Page 6">6</button>
-        </div>
+        <Pagination />
         
     </section>
 

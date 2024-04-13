@@ -25,7 +25,7 @@
             </div> <!--right-->
         </div>
         {#if accordeon.picture}
-            <img class="imgRecipeAccordion" src="{ imageBaseUrl + accordeon.picture }" alt="">
+            <img class="imgRecipeAccordion" src="{ imageBaseUrl + accordeon.picture }" alt="Photo de la recette (à dynamiser)">
         {/if}
         <div class="footerRecipeAccordion">
             <div class="ingredientsList">

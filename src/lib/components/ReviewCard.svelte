@@ -8,12 +8,12 @@
 
 <article class="framerestaurants">
     {#if review.picture}
-        <img class="restaurants" src="{imageBaseUrl + review.picture}" alt="premier restaurant" />
+        <img class="restaurants" src="{imageBaseUrl + review.picture}" alt="Photo du restaurant (à dynamiser)" />
     {/if}
     <h3>{review.restaurant.name}</h3>
     <p>{review.restaurant.rating}</p>
 
-    <ReviewAccordeon accordeonReview={review}/>
+    <ReviewAccordeon accordeonReview={review} />
 
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">

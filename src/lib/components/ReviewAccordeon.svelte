@@ -1,6 +1,5 @@
 <script>
     export let accordeonReview;
-    export let review;
 
     const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
 
@@ -25,7 +24,7 @@
             </div>
         </div>
         {#if accordeonReview.picture}
-            <img class="imgReviewAccordion" src="{ imageBaseUrl + accordeonReview.picture }" alt="">
+            <img class="imgReviewAccordion" src="{ imageBaseUrl + accordeonReview.picture }" alt="Photo du restaurant (à dynamiser)">
         {/if}
         <div class="footerRecipeAccordion">
             <div class="ourOpinion">

@@ -8,7 +8,7 @@
 
 <article class="framerecipes">
     {#if recipe.picture}
-        <img class="recipes" src="{ imageBaseUrl + recipe.picture }" alt="première recette" />
+        <img class="recipes" src="{ imageBaseUrl + recipe.picture }" alt="Photo de la recette (à dynamiser)" />
     {/if}
     <!-- else : add picture  -->
     <h3>{recipe.name}</h3> <!--recipe title-->
