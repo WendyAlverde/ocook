@@ -1,10 +1,10 @@
 <script>
-    import imageApero from "../../../src/assets/images/logos/martini-glass-citrus-solid.svg"
-    import imageEntree from "../../../src/assets/images/logos/bowl-rice-solid.svg"
-    import imagePlat from "../../../src/assets/images/logos/utensils-solid.svg"
-    import imageDessert from "../../../src/assets/images/logos/ice-cream-solid.svg"
-    import imageViande from "../../../src/assets/images/logos/drumstick-bite-solid.svg"
-    import imageVegetalien from "../../../src/assets/images/logos/carrot-solid.svg"
+    import imageApero from "../../../src/assets/images/logos/filters/martini-glass-citrus-solid.svg"
+    import imageEntree from "../../../src/assets/images/logos/filters/bowl-rice-solid.svg"
+    import imagePlat from "../../../src/assets/images/logos/filters/utensils-solid.svg"
+    import imageDessert from "../../../src/assets/images/logos/filters/ice-cream-solid.svg"
+    import imageViande from "../../../src/assets/images/logos/filters/drumstick-bite-solid.svg"
+    import imageVegetalien from "../../../src/assets/images/logos/filters/carrot-solid.svg"
 </script>
 
 <section class="backgroundsection">
