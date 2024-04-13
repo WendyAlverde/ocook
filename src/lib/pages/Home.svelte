@@ -16,6 +16,7 @@
 
     <!-- carousel -->
     <section class="carousel">
+        <h2>Recettes de la semaine</h2>
         <div class="center">
             <div class="carousel-wrapper">
                 <!-- abstract radio buttons for slides -->
@@ -45,16 +46,16 @@
                 <div class="carousel">
                     <ul>
                         <li>
-                            <img src={apero} alt="">
+                            <img src={apero} alt="Photo de l'apéro (à dynamiser)">
                         </li>
                         <li>
-                            <img src={pate} alt="">
+                            <img src={pate} alt="Photo de l'entrée (à dynamiser)">
                         </li>
                         <li>
-                            <img src={restaurant1} alt="">
+                            <img src={restaurant1} alt="Photo du plat (à dynamiser)">
                         </li>
                         <li>
-                            <img src={restaurant2} alt="">
+                            <img src={restaurant2} alt="Photo du dessert (à dynamiser)">
                         </li>
                     </ul>
                 </div>
@@ -66,7 +67,7 @@
     <section class="backgroundsection home">
         <h2 class="title">Nos recettes</h2>
         <article class="framerecipes">
-            <img class="recipes" src={pate} alt="première recette" />
+            <img class="recipes" src={pate} alt="Photo de la recette (à dynamiser)" />
             <h3>Chili con carne</h3> <!--recipe title-->
             <p>Wendy Alverde</p> <!--author name-->
             <p>Plat</p> <!--category-->
@@ -85,7 +86,7 @@
             </svg>
         </article>
         <article class="framerecipes">
-            <img class="recipes" src={apero} alt="première recette" />
+            <img class="recipes" src={apero} alt="Photo de la recette (à dynamiser)" />
             <h3>Entrecôte</h3> <!--recipe title-->
             <p>Nicolas Ugé</p> <!--author name-->
             <p>Plat</p> <!--category-->
@@ -108,7 +109,7 @@
     <section class="backgroundsection home">
         <h2 class="title">Les restaurants</h2>
         <article class="framerestaurants">
-            <img class="restaurants" src={restaurant3} alt="premier restaurant" />
+            <img class="restaurants" src={restaurant3} alt="Photo du restaurant (à dynamiser)" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->
             <p>5/5</p> <!-- rating --> 
             <div class="wrapper">
@@ -126,7 +127,7 @@
             </svg>
         </article>
         <article class="framerecipes">
-            <img class="restaurants" src={restaurant4} alt="premier restaurant" />
+            <img class="restaurants" src={restaurant4} alt="Photo du restaurant (à dynamiser)" />
             <h3>Les Cornettes </h3> <!--restaurant name-->
             <p>4/5</p> <!-- rating --> 
             <div class="wrapper">

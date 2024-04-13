@@ -2,7 +2,6 @@
     import {link} from "svelte-spa-router"
     import ocooklogo from "../../assets/images/logos/ocook-logo-blue.webp"
     import imageConnexion from "../../assets/images/logos/icons8-invité-homme-80.png"
-
     
     function toggleMenu() {
         const toggle = document.getElementById('toggle');

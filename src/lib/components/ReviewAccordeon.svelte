@@ -1,5 +1,5 @@
 <script>
-    export let accordeon;
+    export let accordeonReview;
 
     const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
 
@@ -11,28 +11,24 @@
     }
 </script>
 
-<div class="accordion-item wrapper">
+<div class="accordion-item">           
     <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté de la recette">
         {showAnswer ? 'Replier' : 'Voir plus'}
     </button>
     <div class="answer {showAnswer ? 'show' : ''}">
         <div class="headerRecipeAccordion">
-            <div class="recipename">
-                <h3>{accordeon.name}</h3> 
-            </div> <!--left-->
-            <div class="authorname">
-                <p>{accordeon.users.first_name}</p>
-            </div> <!--right-->
+            <div class="reviewname">
+                <h3>{accordeonReview.title}</h3>
+                <p>{accordeonReview.date}</p>
+                <p>{accordeonReview.restaurant.rating} : &#9733;</p> 
+            </div>
         </div>
-        {#if accordeon.picture}
-            <img class="imgRecipeAccordion" src="{ imageBaseUrl + accordeon.picture }" alt="Photo de la recette (à dynamiser)">
+        {#if accordeonReview.picture}
+            <img class="imgReviewAccordion" src="{ imageBaseUrl + accordeonReview.picture }" alt="Photo du restaurant (à dynamiser)">
         {/if}
         <div class="footerRecipeAccordion">
-            <div class="ingredientsList">
-                <p>{accordeon.ingredients}</p>
-            </div>
-            <div class="todoList">
-                <p>{accordeon.to_do_list}</p>
+            <div class="ourOpinion">
+                <p>{accordeonReview.reviews}</p>
             </div>
         </div>
     </div>

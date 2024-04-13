@@ -1,22 +1,19 @@
-<script>
-    import {link} from "svelte-spa-router"
-    
-    // import informations tables Directus
+<script>    
     export let review;
+    import ReviewAccordeon from "./ReviewAccordeon.svelte"
 
     const imageBaseUrl = import.meta.env.VITE_API_BASE_URL + 'assets/'
     
-    console.log(review)
 </script>
 
 <article class="framerestaurants">
     {#if review.picture}
-        <img class="restaurants" src="{imageBaseUrl + review.picture}" alt="premier restaurant" />
+        <img class="restaurants" src="{imageBaseUrl + review.picture}" alt="Photo du restaurant (à dynamiser)" />
     {/if}
     <h3>{review.restaurant.name}</h3>
     <p>{review.restaurant.rating}</p>
 
-    <a class="button" href="/reviews" aria-label="Accéder à l'entièreté de la critique" use:link>Voir plus</a> <!---->
+    <ReviewAccordeon accordeonReview={review} />
 
     <!-- Filter: https://css-tricks.com/gooey-effect/ -->
     <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">

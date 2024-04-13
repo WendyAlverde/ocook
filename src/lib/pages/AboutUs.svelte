@@ -67,6 +67,6 @@
             Cordialement,<br>
             L'équipe O'cook</p>
         <p>© 2024 O'cook.</p>
-        <a href="#">Mentions légales</a>
+        <a href="/legalNotice" use:link>Mentions légales</a>
     </section>
 </main>
