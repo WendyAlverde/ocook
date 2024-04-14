@@ -8,7 +8,7 @@
 </script>
 
 <section class="backgroundsection">
-    <h2 class="title">Les filtres des recettes</h2>
+    <h2>Les filtres des recettes</h2>
     <div class="sixFilters">
         <button role="button" class="filter" aria-pressed="false" aria-label="Filtre apéritif">
             <img class="categories" src={imageApero} alt="apéritif"/>

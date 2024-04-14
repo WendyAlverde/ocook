@@ -1,14 +1,16 @@
 <script>
     import {link} from "svelte-spa-router"
 
-    import Filter from "../components/Filter.svelte";
-    
+    import Filter from "../components/Filter.svelte"
+    import SvgButton from "../components/SvgButton.svelte"
+
     import apero from "../../assets/images/temporaire/apero.webp"
     import pate from "../../assets/images/temporaire/pates.webp"
     import restaurant1 from "../../assets/images/temporaire/restaurant-1.webp"
     import restaurant2 from "../../assets/images/temporaire/restaurant-2.webp"
     import restaurant3 from "../../assets/images/temporaire/restaurant-3.webp"
     import restaurant4 from "../../assets/images/temporaire/restaurant-4.webp"
+
 </script>
 
 <main role="main">
@@ -65,7 +67,7 @@
 
     <!-- cards-->
     <section class="backgroundsection home">
-        <h2 class="title">Nos recettes</h2>
+        <h2>Nos recettes</h2>
         <article class="framerecipes">
             <img class="recipes" src={pate} alt="Photo de la recette (à dynamiser)" />
             <h3>Chili con carne</h3> <!--recipe title-->
@@ -74,16 +76,7 @@
             <div class="wrapper">
                 <a class="button" href="/recipes" use:link>Voir plus</a>
             </div>
-            
-            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-                    </filter>
-                </defs>
-            </svg>
+            <SvgButton />
         </article>
         <article class="framerecipes">
             <img class="recipes" src={apero} alt="Photo de la recette (à dynamiser)" />
@@ -92,22 +85,13 @@
             <p>Plat</p> <!--category-->
             <div class="wrapper">
                 <a class="button" role="button" href="/recipes" use:link>Voir plus</a>
-            </div>
-            
-            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-                    </filter>
-                </defs>
-            </svg>
+            </div> 
+            <SvgButton />
         </article>
     </section>
 
     <section class="backgroundsection home">
-        <h2 class="title">Les restaurants</h2>
+        <h2>Les restaurants</h2>
         <article class="framerestaurants">
             <img class="restaurants" src={restaurant3} alt="Photo du restaurant (à dynamiser)" />
             <h3>Le Greppon Blanc</h3> <!--restaurant name-->
@@ -115,16 +99,7 @@
             <div class="wrapper">
                 <a class="button" href="/reviews" use:link>Voir plus</a>
             </div>
-            
-            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-                    </filter>
-                </defs>
-            </svg>
+            <SvgButton />
         </article>
         <article class="framerecipes">
             <img class="restaurants" src={restaurant4} alt="Photo du restaurant (à dynamiser)" />
@@ -133,16 +108,7 @@
             <div class="wrapper">
                 <a class="button" href="/reviews" use:link>Voir plus</a>
             </div>
-            
-            <!-- Filter: https://css-tricks.com/gooey-effect/ -->
-            <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                    <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-                    </filter>
-                </defs>
-            </svg>
+            <SvgButton />
         </article>
     </section>
 

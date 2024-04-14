@@ -29,7 +29,7 @@
 </script>
 
 <main>
-    <h1 class="title" lang="en">Reviews</h1>
+    <h1 lang="en">Reviews</h1>
     <section class="backgroundsection">
         {#await reviews}
             <p>Chargement des critiques de restaurants...</p>

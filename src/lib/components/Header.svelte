@@ -9,17 +9,17 @@
     }
 </script>
 
-<header role="banner" class="backgroundcomponent header">
+<header role="banner" class="backgroundcomponent"><!-- header -->
     <div class="container">
         <input id="toggle" type="checkbox">
         <label class="toggle-container" for="toggle" aria-label="Toggle Menu">
             <span class="button-toggle"></span> <!-- Cet element contient le menu burger -->
         </label>
         <nav role="navigation" class="nav" aria-labelledby="toggle">
-            <a class="nav-item essai" href="/" use:link on:click={toggleMenu}>Accueil</a>
-            <a class="nav-item essai" href="/recipes" use:link on:click={toggleMenu}>Recettes</a>
-            <a class="nav-item essai" href="/reviews" use:link on:click={toggleMenu}>Critiques</a>
-            <a class="nav-item essai" href="/aboutus" use:link on:click={toggleMenu}>À propos</a>
+            <a class="nav-item" href="/" use:link on:click={toggleMenu}>Accueil</a>
+            <a class="nav-item" href="/recipes" use:link on:click={toggleMenu}>Recettes</a>
+            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}>Critiques</a>
+            <a class="nav-item" href="/aboutus" use:link on:click={toggleMenu}>À propos</a>
         </nav>
         <div class="burgersearch"> 
             <a href="/logform" use:link>
