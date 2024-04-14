@@ -29,7 +29,9 @@
 </script>
 
 <main>
-    <h1 class="title">Recettes</h1>
+    <h1>Recettes</h1>
+    
+    <Filter />
 
     <section class="backgroundsection">
         {#await recipes}
