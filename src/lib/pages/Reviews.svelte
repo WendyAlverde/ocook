@@ -1,17 +1,19 @@
 <script>
     import {link} from "svelte-spa-router"
 
-    import Pagination from "../components/Pagination.svelte";
+    import {directus} from "../../utils/directus";
+
     import ReviewCard from "../components/ReviewCard.svelte";
+    import Pagination from "../components/Pagination.svelte";
     
     // Reviews
     async function getReviews() {
     // 1. appeler l'API de Directus
         // 1.1 récupérer l'URL du endpoint
-        const endpoint = import.meta.env.VITE_API_BASE_URL + "items/Reviews?fields=*,restaurant.name,restaurant.rating"
+        const endpoint = "items/Reviews?fields=*,restaurant.name,restaurant.rating"
 
         // 1.2 faire une requête HTTP au endpoint
-        const response = await fetch(endpoint)
+        const response = await directus(endpoint)
         
     // 2. récupérer les recettes à partir de la réponse de l'API
         // 2.1 récupérer la réponse de l'API et la convertir en objet
@@ -19,11 +21,11 @@
 
         console.log(json.data)
 
-    // 3. retourner les recettes
+    // 3. retourner les reviews
         return json.data
     }
 
-    // 4. mettre les recettes dans la variable recipes
+    // 4. mettre les reviews dans la variable reviews
     const reviews = getReviews()  
 
 </script>
