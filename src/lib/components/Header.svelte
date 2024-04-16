@@ -9,7 +9,7 @@
     }
 </script>
 
-<header role="banner" class="backgroundcomponent"><!-- header -->
+<header role="banner" class="backgroundcomponent sticky"><!-- header -->
     <div class="container">
         <input id="toggle" type="checkbox">
         <label class="toggle-container" for="toggle" aria-label="Toggle Menu">

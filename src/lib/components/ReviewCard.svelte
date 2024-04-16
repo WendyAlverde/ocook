@@ -4,7 +4,6 @@
     import SvgButton from "./SvgButton.svelte"
 
     const imageBaseUrl = import.meta.env.VITE_API_BASE_URL + 'assets/'
-    
 </script>
 
 <article class="framerestaurants">

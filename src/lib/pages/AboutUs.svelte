@@ -1,15 +1,18 @@
 <script>
     import {link} from "svelte-spa-router"
-    import pictureOcklecook from "../../assets/images/aboutus/phototest.jpg"
-    import SvgButton from "../components/SvgButton.svelte"
+    import pictureOcklecook from "../../assets/images/aboutus/aboutus.jpg"
+    import SvgButton from "../components/SvgButton.svelte";
 </script>
 
 <main class="aboutus">
     <h1>À propos</h1>
 
-    <section class="backgroundsection">
+    <section class="backgroundsection" id="contact">
         <div class="aboutMe">
-            <img class="profilePicture" src={pictureOcklecook} alt="Profil de l'auteur du site">
+            <figure>
+                <img class="profilePicture" src={pictureOcklecook} alt="Profil de l'auteur du site">
+                <figcaption>Dessin d'Alice Ocklecook, créatrice du blog culinaire</figcaption>
+            </figure>
             <p>
                 Bonjour ! Je suis Alice Ocklecook, passionnée de cuisine et créatrice de ce blog culinaire. Je partage ici mes recettes, astuces et inspirations pour vous aider à découvrir le plaisir de cuisiner et à éveiller vos papilles. Explorez mes créations et laissez-vous inspirer pour des moments gourmands inoubliables !
                 À bientôt autour de nos assiettes,
@@ -18,8 +21,8 @@
         </div>
     </section>
 
-    <div class="contactNews">
-        <section class="backgroundsection left">
+    <div class="contactNews" >
+        <section class="backgroundsection left" >
             <h2>Formulaire de contact</h2>
             <form class="leftPage" method="get">
                 <label for="email"></label>
@@ -29,7 +32,7 @@
                 <div class="wrapper">
                     <a class="button" href="#">Envoyer</a>
                 </div>
-                <SvgButton />          
+                <SvgButton />            
             </form>
         </section>
 
@@ -51,6 +54,12 @@
             Cordialement,<br>
             L'équipe O'cook</p>
         <p>© 2024 O'cook.</p>
-        <a href="/legalNotice" use:link>Mentions légales</a>
+        <a href="/legalnotice" use:link>Mentions légales</a>
     </section>
 </main>
+
+<style>
+    img {
+        width: 15rem;
+    }
+</style>
