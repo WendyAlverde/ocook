@@ -153,7 +153,7 @@
 
 </script>
 
-<main>
+<main role="main">
     <h1>Recettes</h1>
     <!-- Recipe Filter -->
     <Filter />

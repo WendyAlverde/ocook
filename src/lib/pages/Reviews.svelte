@@ -30,7 +30,7 @@
 
 </script>
 
-<main>
+<main role="main">
     <!-- Main section for displaying restaurant reviews -->
     <h1 lang="en">Reviews</h1>
     <section class="backgroundsection">

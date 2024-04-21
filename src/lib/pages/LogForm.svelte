@@ -133,91 +133,94 @@
     }
 </script>
 
-<div class="logForm" bind:this={root}>
-    <section class="logForm-section">
-        <!-- Sign-in line -->
-        <div class="signIn-line">
-            <!-- Sign-in button -->
-            <h2 class="signIn-buton" on:click={toggleForm} aria-label="Créer un compte">
-                Créer un compte
-            </h2>
-        </div>
-        <!-- Sign-up form -->
-        <form method="post" on:submit={signup}>
-        <!-- Username input -->
-            <label class="logForm-inputRow">
-                Pseudonyme
-                <input type="text" name="username" placeholder="Nom d'utilisateur" required bind:value={signupData.username}>
-            </label>
-            <!-- Email input -->
-            <label class="logForm-inputRow">
-                Adresse e-mail
-                <input type="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signupData.email}>
-            </label>
-            <!-- Password input -->
-            <label class="logForm-inputRow">
-                Mot de passe
-                <input type="password" name="password" required bind:value={signupData.password}>
-            </label>
-            <!-- Confirm Password input -->
-            <label class="logForm-inputRow">
-                Confirmation du mot passe
-                <input type="password" name="password-confirm" required bind:value={signupData.passwordConfirm}>
-            </label>
-            <!-- Signup error message -->
-            {#if signupError}
-                <p class="logForm-errorMessage" aria-live="polite">
-                    {signupError}
-                </p>
-            <!-- Signup success message -->
-            {:else}
-                <p id="signupSuccessMessage" class="success-message" aria-live="polite">
-                    {signupSuccesMessage}
-                </p>  
-            {/if}
-            <!-- Signup button -->
-            <button class="buttonlogin" type="submit">
-                S'enregistrer
-            </button>
+<main role="main">
+    <div class="logForm" bind:this={root}>
+        <section class="logForm-section">
+            <!-- Sign-in line -->
+            <div class="signIn-line">
+                <!-- Sign-in button -->
+                <h2 class="signIn-buton" on:click={toggleForm} aria-label="Créer un compte">
+                    Créer un compte
+                </h2>
+            </div>
+            <!-- Sign-up form -->
+            <form method="post" on:submit={signup}>
+            <!-- Username input -->
+                <label class="logForm-inputRow">
+                    Pseudonyme
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" required bind:value={signupData.username}>
+                </label>
+                <!-- Email input -->
+                <label class="logForm-inputRow">
+                    Adresse e-mail
+                    <input type="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signupData.email}>
+                </label>
+                <!-- Password input -->
+                <label class="logForm-inputRow">
+                    Mot de passe
+                    <input type="password" name="password" required bind:value={signupData.password}>
+                </label>
+                <!-- Confirm Password input -->
+                <label class="logForm-inputRow">
+                    Confirmation du mot passe
+                    <input type="password" name="password-confirm" required bind:value={signupData.passwordConfirm}>
+                </label>
+                <!-- Signup error message -->
+                {#if signupError}
+                    <p class="logForm-errorMessage" aria-live="polite">
+                        {signupError}
+                    </p>
+                <!-- Signup success message -->
+                {:else}
+                    <p id="signupSuccessMessage" class="success-message" aria-live="polite">
+                        {signupSuccesMessage}
+                    </p>  
+                {/if}
+                <!-- Signup button -->
+                <button class="buttonlogin" type="submit">
+                    S'enregistrer
+                </button>
+    
+            </form>
+            <!-- End of sign-up form -->
+        </section>
+    
+        <!-- Sign-in section -->
+        <section class="logForm-section logForm-section-close">
+            <!-- Sign-in line -->
+            <div class="signIn-line">
+                <!-- Sign-in button -->
+                <h2 class="signIn-buton" on:click={toggleForm} aria-label="Se connecter">
+                    Se connecter
+                </h2>
+            </div> 
+            <!-- Sign-in form -->
+            <form method="post" on:submit={signin}>
+                <!-- Email input -->
+                <label for="username" class="logForm-inputRow">
+                    Adresse e-mail
+                    <input type="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signinData.email}>
+                </label>
+                <!-- Password input -->
+                <label for="email" class="logForm-inputRow">
+                    Mot de passe
+                    <input type="password" name="password" required bind:value={signinData.password}>
+                </label>
+                <!-- Sign-in error message -->
+                {#if signinError}
+                    <p class="logForm-errorMessage"> 
+                        {signinError}
+                    </p>
+                <!-- Sign-in button -->
+                {/if}
+                <button class="buttonlogin" type="submit">
+                    Se connecter
+                </button>
+            </form>
+        </section>
+    </div>
+</main>
 
-        </form>
-        <!-- End of sign-up form -->
-    </section>
-
-    <!-- Sign-in section -->
-    <section class="logForm-section logForm-section-close">
-        <!-- Sign-in line -->
-        <div class="signIn-line">
-            <!-- Sign-in button -->
-            <h2 class="signIn-buton" on:click={toggleForm} aria-label="Se connecter">
-                Se connecter
-            </h2>
-        </div> 
-        <!-- Sign-in form -->
-        <form method="post" on:submit={signin}>
-            <!-- Email input -->
-            <label for="username" class="logForm-inputRow">
-                Adresse e-mail
-                <input type="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signinData.email}>
-            </label>
-            <!-- Password input -->
-            <label for="email" class="logForm-inputRow">
-                Mot de passe
-                <input type="password" name="password" required bind:value={signinData.password}>
-            </label>
-            <!-- Sign-in error message -->
-            {#if signinError}
-                <p class="logForm-errorMessage"> 
-                    {signinError}
-                </p>
-            <!-- Sign-in button -->
-            {/if}
-            <button class="buttonlogin" type="submit">
-                Se connecter
-            </button>
-        </form>
-    </section>
-</div>
 
 <style lang="scss">
     .logForm {
