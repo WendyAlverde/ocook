@@ -1,18 +1,25 @@
 <script>
+    // Import the link function from the Svelte SPA Router library
     import {link} from "svelte-spa-router"
 </script>
 
-<div class="background404">
-    <div class="blur">
-        <section class="error">
-            <p>Désolé, la page que vous recherchez n'a pas été trouvée.</p>
-            <ul>
-                <li>Retournez à la <a href="/" use:link>page d'accueil</a> pour explorer d'autres contenus.</li>
-                <li>Si vous pensez qu'il s'agit d'une erreur, <a href="/contact" use:link>contactez-nous</a> pour obtenir de l'aide.</li>
-            </ul>
-        </section>
+<main role="main">
+    <div class="background404" role="main" aria-labelledby="error-heading">
+        <div class="blur">
+            <section class="error">
+                <h1 id="error-heading">Erreur 404</h1>
+                <p>Désolé, la page que vous recherchez n'a pas été trouvée.</p>
+                <ul>
+                    <li>Retournez à la <a href="/" use:link>page d'accueil</a> pour explorer d'autres contenus.</li>
+                    <li>Si vous pensez qu'il s'agit d'une erreur, <a href="/contact" use:link>contactez-nous</a> pour obtenir de l'aide.</li>
+                </ul>
+            </section>
+        </div>
     </div>
-</div>
+</main>
+
+
+<!-- CSS -->
 
 <style>
     .background404 {
@@ -20,6 +27,10 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .blur {

@@ -1,45 +1,33 @@
 <script>
-    export let accordeonReview;
+    // Export a variable to hold the accordion review data
+export let accordeonReview;
 
-    const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
+// Define a constant variable to store the base URL for images
+const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/';
 
-    let showAnswer = false;
+// Initialize a boolean variable to control the visibility of the accordion content
+let showAnswer = false;
 
-    // If false goes on true, if true goes on false
-    const showMore = () => {
-        showAnswer = !showAnswer;
-    }
+// Function to toggle the visibility of the accordion content
+const showMore = () => {
+    showAnswer = !showAnswer; // If false, becomes true; if true, becomes false
+}
 </script>
 
-<div class="accordion-item wrapper">           
-    <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté de la recette">
+<div class="accordion-item wrapper" role="region" aria-labelledby="accordion-heading-{accordeonReview.id}">
+    <!-- Button to toggle visibility of the accordion content -->           
+    <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté de la recette" aria-expanded="{showAnswer}" aria-controls="accordion-content-{accordeonReview.id}">
+        <!-- Show different text based on the state of showAnswer -->
         {showAnswer ? 'Replier' : 'Voir plus'}
     </button>
-    <div class="answer {showAnswer ? 'show' : ''}">
-        <div class="headerAccordeon">
-            <div class="blocAccordeon">
-                <h3>{accordeonReview.title}</h3>
-            </div>
-            <div class="blocAccordeon">
-                <p>{accordeonReview.date}</p>
-            </div>
-            <div class="blocAccordeon">
-                <p>{accordeonReview.restaurant.rating} : &#9733;</p> 
-            </div>
-        </div>
-        {#if accordeonReview.picture}
-            <img class="imgAccordeon" src="{ imageBaseUrl + accordeonReview.picture }" alt="Photo du restaurant (à dynamiser)">
-        {/if}
+    <!-- Container for the accordion content -->
+    <div class="answer {showAnswer ? 'show' : ''}" id="accordion-content-{accordeonReview.id}" aria-hidden="{!showAnswer}">
         <div class="contentAccordeon">
+            <!-- Display the title and review of the accordion item -->
             <div class="ourOpinion">
+                <h3 id="accordion-heading-{accordeonReview.id}">{accordeonReview.title}</h3>
                 <p>{accordeonReview.review}</p>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    /* .answer.show {
-        max-height: 50rem;
-    } */
-</style>

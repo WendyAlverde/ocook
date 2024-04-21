@@ -1,37 +1,135 @@
 <script>
-    import {link} from "svelte-spa-router"
-    import ocooklogo from "../../assets/images/logos/ocook-logo-blue.webp"
-    import imageConnexion from "../../assets/images/logos/icons8-invité-homme-80.png"
-    
+    import { link, push } from "svelte-spa-router";
+    import { logout } from "../../utils/logout";
+    import { onMount } from "svelte";
+    import { directus } from "../../utils/directus";
+
+    // Import necessary modules and functions
+
+    // import { redirect,error } from '@sveltejs/kit';
+
+    // Import logo and login image
+    import ocooklogo from "../../assets/images/logos/ocook-logo-blue.webp";
+    import imageConnexion from "../../assets/images/logos/connexion.webp";
+
+    // Function to close the menu by unchecking the checkbox
     function toggleMenu() {
-        const toggle = document.getElementById('toggle');
-        toggle.checked = false; // Ferme le menu en décochant la case à cocher
+        const toggle = document.getElementById("toggle");
+        toggle.checked = false; 
+    }
+
+    // logout
+    // Check if user is logged in
+    let hasToken = localStorage.getItem("directusToken") !== null;
+    let username = "";
+    // Update hasToken variable on initial load
+    onMount(() => {
+        window.addEventListener("storage", handleStorageChange);
+
+        if (hasToken) {
+            fetchUserData();
+        }
+    });
+
+    // Function to fetch user data
+    function fetchUserData() {
+        const endpoint = "users?fields=first_name";
+        // Make a request to your user endpoint
+        fetch(endpoint, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('directusToken')}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update username with fetched data
+            if (data && data.data && data.data.length > 0) {
+                username = data.data[0].first_name;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données utilisateur :', error);
+        });
+    }
+
+    // Function to handle changes in localStorage
+    function handleStorageChange(event) {
+        if (event.key === "directusToken") {
+            hasToken = localStorage.getItem("directusToken") !== null;
+
+            if (hasToken) {
+            fetchUserData();
+        } else {
+            // Reset username if token is removed
+            username = "";
+        }
+        }
+    }
+
+    // Function to handle user logout
+    async function handleLogout() {
+        await logout(); // Call logout function from utils/logout.js or any relevant file
+
+        // Redirect to login page after logout
+        // location.reload();
+        push('/logform');
     }
 </script>
 
-<header role="banner" class="backgroundcomponent sticky"><!-- header -->
+<header role="banner" class="backgroundcomponent sticky">
+    <!-- Header -->
     <div class="container">
-        <input id="toggle" type="checkbox">
-        <label class="toggle-container" for="toggle" aria-label="Toggle Menu">
-            <span class="button-toggle"></span> <!-- Cet element contient le menu burger -->
+        <!-- Toggle menu checkbox -->
+        <input id="toggle" type="checkbox" />
+        <!-- Toggle menu label -->
+        <label class="toggle-container" for="toggle" aria-label="Basculer le menu">
+            <span class="button-toggle"></span>
+            <!-- This element contains the burger menu  -->
         </label>
-        <nav role="navigation" class="nav" aria-labelledby="toggle">
-            <a class="nav-item" href="/" use:link on:click={toggleMenu}>Accueil</a>
-            <a class="nav-item" href="/recipes" use:link on:click={toggleMenu}>Recettes</a>
-            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}>Critiques</a>
-            <a class="nav-item" href="/aboutus" use:link on:click={toggleMenu}>À propos</a>
+
+        <!-- Navigation menu -->
+        <nav role="navigation" class="nav menu-nav" aria-labelledby="Basculer">
+            <!-- Home link -->
+            <a class="nav-item" href="/" use:link on:click={toggleMenu}><span class="title-nav">Accueil</span></a>
+            <!-- Recipes link -->
+            <a class="nav-item" href="/recipes" use:link on:click={toggleMenu}><span class="title-nav">Recettes</span></a>
+            <!-- Reviews link -->
+            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}><span class="title-nav">Critiques</span></a>
+            <!-- About us link -->
+            <a class="nav-item" href="/aboutus" use:link on:click={toggleMenu}><span class="title-nav">À propos</span></a>
         </nav>
-        <div class="burgersearch"> 
+        <!-- Burger and search section -->
+        <div class="burgersearch">
+            <!-- Login link -->
             <a href="/logform" use:link>
-                <img class="connexion" src={imageConnexion} alt="Bouton de connexion">
+                <img
+                    class="connexion"
+                    src={imageConnexion}
+                    alt="Bouton de connexion"
+                />
             </a>
+            <!-- Logout button (if user is logged in) -->
+            {#if hasToken}
+                <div>
+                    <p>{username}</p>
+                    <!-- Button to logout -->
+                    <a href="/logform" on:click={handleLogout}>Se déconnecter</a>
+                </div>
+            {/if}
+            <!-- Search form -->
             <div id="wrapsearch">
                 <form action="" autocomplete="on">
-                    <input id="search" name="search" type="text" placeholder="Recherche par mots clés">
+                    <!-- Champ de recherche -->
+                    <input id="search" name="search" type="text" placeholder="Recherche par mots clés" class="search-input" >
+                        <!-- Soumission de la recherche -->
                     <input id="search_submit" value="Rechercher" type="submit">
                 </form>
             </div>
         </div>
     </div>
-    <img src={ocooklogo} alt="O'cook-logo">
+
+    <!-- O'Cook logo -->
+    <img src={ocooklogo} alt="O'cook-logo" aria-hidden="true"/>
 </header>
+
+
