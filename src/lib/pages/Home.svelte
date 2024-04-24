@@ -26,7 +26,7 @@
         // 2.1 retrieve the API response and convert it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
     // 3. return recipes
         return json.data

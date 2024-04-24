@@ -18,7 +18,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
         // 3. Return the recipes
         return json.data
@@ -40,7 +40,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Categories', json.data)
+        // console.log('Categories', json.data)
 
         // 3. Return the categories
         return json.data
