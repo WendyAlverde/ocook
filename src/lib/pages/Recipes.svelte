@@ -18,7 +18,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
         // 3. Return the recipes
         return json.data
@@ -40,7 +40,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Categories', json.data)
+        // console.log('Categories', json.data)
 
         // 3. Return the categories
         return json.data
@@ -56,14 +56,13 @@
         showAnswer = !showAnswer;
     }
 
-    // add recipe
+    /* ================== add recipe ====================*/
     const endpointAddRecipe = "items/Recipes"
 
     const recipeData = {
         name: '',
         ingredients:'',
         to_do_list:'',
-
         categories: [],
         // picture: '',
     }
@@ -106,7 +105,7 @@
         if (response.ok) {
             // 5. Redirect the user to the recipes page
             push('/recipes')
-            succesMessage = "Votre recette est ajouté !"
+            succesMessage = "Votre recette est ajoutée !"
         }
         // 6. If Directus tells us it's not OK, blame Nico
         else {
@@ -115,40 +114,40 @@
     }
     
     //=====  add recipe pictures =====//
-    function createThumbnail(file,id) {
-    var Reader = new FileReader();
-    Reader.addEventListener('load', function() {
-        var imgElement = document.createElement('img');
-        imgElement.classList.add('imgPreview') 
-        imgElement.src = this.result;
-        document.getElementById('preview-'+id).appendChild(imgElement);
-    }, false);
+    // function createThumbnail(file,id) {
+    // var Reader = new FileReader();
+    // Reader.addEventListener('load', function() {
+    //     var imgElement = document.createElement('img');
+    //     imgElement.classList.add('imgPreview') 
+    //     imgElement.src = this.result;
+    //     document.getElementById('preview-'+id).appendChild(imgElement);
+    // }, false);
 
-    Reader.readAsDataURL(file);
+    // Reader.readAsDataURL(file);
 
-    }//function upload recipe picture
-    function changeInputFil(event){
-    var inputFile = event.currentTarget,
-        name = inputFile.name,
-        files = inputFile.files,
-        allowedTypes = ['png', 'jpg', 'jpeg'],
-        imgType;  
-    document.getElementById('preview-'+ name).innerHTML ='';
-    for (var i = 0 ; i < files.length ; i++) {
-        imgType = files[i].name.split('.');
-        imgType = imgType[imgType.length - 1];
-        if(allowedTypes.indexOf(imgType) != -1) {
-        createThumbnail(files[i],name);
-        }//if
-    }//for
-    }//function 
+    // }//function upload recipe picture
+    // function changeInputFil(event){
+    // var inputFile = event.currentTarget,
+    //     name = inputFile.name,
+    //     files = inputFile.files,
+    //     allowedTypes = ['png', 'jpg', 'jpeg'],
+    //     imgType;  
+    // document.getElementById('preview-'+ name).innerHTML ='';
+    // for (var i = 0 ; i < files.length ; i++) {
+    //     imgType = files[i].name.split('.');
+    //     imgType = imgType[imgType.length - 1];
+    //     if(allowedTypes.indexOf(imgType) != -1) {
+    //     createThumbnail(files[i],name);
+    //     }//if
+    // }//for
+    // }//function 
 
-    document.addEventListener('DOMContentLoaded',function(){
-    var fileInput = document.forms['formRecipe'].querySelectorAll('[type=file]');
-    for(var k = 0; k < fileInput.length;k++){
-        fileInput[k].addEventListener('change', changeInputFil, false);
-    }//for
-    });
+    // document.addEventListener('DOMContentLoaded',function(){
+    // var fileInput = document.forms['formRecipe'].querySelectorAll('[type=file]');
+    // for(var k = 0; k < fileInput.length;k++){
+    //     fileInput[k].addEventListener('change', changeInputFil, false);
+    // }//for
+    // });
      //=====  add recipe pictures =====//
 
 </script>
@@ -193,49 +192,68 @@
                     <legend>
                         Choisir un ou plusieurs filtres :
                     </legend>
-                    {#await categories}
-                        <p>Chargement des catégories…</p>
-                    {:then categories}
-                        {#each categories as category}
-                            <div class="checkbox-line">
-                                <label>
-                                    <input class="checkbox-input" type="checkbox" name="category" value={category.id} bind:group={recipeData.categories}/>
-                                    {category.name}
-                                </label>
-                            </div>
-                        {/each}
-                    {/await}
+                    <div class="checkbox-line">
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Entrée" bind:group={recipeData.Categories}/>
+                            Entrée
+                            
+                        </label>
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Apéritif" bind:group={recipeData.Categories}/>
+                            Apéritif
+                            
+                        </label>
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Plat principal" bind:group={recipeData.Categories}/>
+                            Plat principal
+                        
+                        </label>
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Dessert" bind:group={recipeData.Categories}/>
+                            Dessert
+                            
+                        </label>
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Végétalien" bind:group={recipeData.Categories}/>
+                            Végétalien
+                            
+                        </label>
+                        <label>
+                            <input class="checkbox-input" type="checkbox" name="category" value="Viande" bind:group={recipeData.Categories}/>
+                            Viande
+                        </label>
+                    </div>
                 </fieldset>
                 <!-- Add a photo -->
                 <label for="add-photo" class="addRecipe-inputRow">
                     Ajouter une photo :
-                    <input class="add-photo" name="file" type="file" multiple accept=".png, .jpg, .jpeg"  bind:value={recipeData.picture}/>
+                    <input id="add-photo" class="add-photo" name="file" type="file" multiple accept=".png, .jpg, .jpeg"  bind:value={recipeData.picture}/>
                     <div id="preview-file">
                     </div>
                 </label>
                 <!-- Ingredients list -->
                 <label class="addRecipe-inputRow">
                     Liste des ingrédients :
-                    <textarea class="recipe-steps" type="text" name="ingredients-list" placeholder="Exemple : Lait, oeuf.."  required bind:value={recipeData.ingredients}></textarea>
+                    <textarea class="recipe-steps" type="text" name="ingredients-list" placeholder="Exemple : Lait, oeuf.." required bind:value={recipeData.ingredients}></textarea>
                 </label>
                 <!-- Recipe steps -->
                 <label class="addRecipe-inputRow">
                     Les étapes de la recette :
-                    <textarea class="recipe-steps" type="text" name="to-do-list" placeholder="Exemple : Ajouter du sucre.."  required  bind:value={recipeData.to_do_list}></textarea>
+                    <textarea class="recipe-steps" type="text" name="to-do-list" placeholder="Exemple : Ajouter du sucre.." required  bind:value={recipeData.to_do_list}></textarea>
                 </label>
                 <!-- Error message -->
                 {#if recipeError}
-                    <p class="addRecipe-errorMessage">
+                    <p class="addRecipe-errorMessage" aria-live="assertive">
                         {recipeError}
                     </p>
                 {:else}
-                    <p id="successMessage" aria-live="polite">
+                    <p id="successMessage" aria-live="assertive">
                         {succesMessage}
                     </p>
                 {/if}
                 <!-- Submit button -->
                 <div class="buttonRecipe">
-                    <button role="button" type="submit">
+                    <button type="submit">
                         Envoyer la recette
                     </button>
                 </div>

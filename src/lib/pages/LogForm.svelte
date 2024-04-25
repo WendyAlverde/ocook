@@ -167,12 +167,12 @@
                 </label>
                 <!-- Signup error message -->
                 {#if signupError}
-                    <p class="logForm-errorMessage" aria-live="polite">
+                    <p class="logForm-errorMessage" aria-live="assertive">
                         {signupError}
                     </p>
                 <!-- Signup success message -->
                 {:else}
-                    <p id="signupSuccessMessage" class="success-message" aria-live="polite">
+                    <p id="signupSuccessMessage" class="success-message" aria-live="assertive">
                         {signupSuccesMessage}
                     </p>  
                 {/if}
@@ -208,7 +208,7 @@
                 </label>
                 <!-- Sign-in error message -->
                 {#if signinError}
-                    <p class="logForm-errorMessage"> 
+                    <p class="logForm-errorMessage" aria-live="assertive"> 
                         {signinError}
                     </p>
                 <!-- Sign-in button -->
