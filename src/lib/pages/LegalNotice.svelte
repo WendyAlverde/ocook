@@ -45,8 +45,7 @@
     </section>
 </main>
 
-<!-- CSS -->
-<style>
+<style lang="scss">
     p {
         line-height: 1.2rem;
         font-size: 1rem;

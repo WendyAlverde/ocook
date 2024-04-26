@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<style>
+<style lang="scss">
     div {
         white-space: normal;
         overflow: hidden;

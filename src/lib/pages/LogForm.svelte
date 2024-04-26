@@ -221,10 +221,8 @@
     </div>
 </main>
 
-
 <style lang="scss">
     .logForm {
-
         margin-bottom: 5rem;
 
         &-inputRow {
@@ -265,13 +263,13 @@
         }
 
         #signupSuccessMessage {
-            width: 50%; /* You can adjust the width according to your preferences */
+            width: 60%; /* You can adjust the width according to your preferences */
             margin: 1rem auto; /* You can adjust the margins according to your preferences */
             padding: 1rem; /* You can adjust the padding according to your preferences */
             color: rgb(13, 105, 13); /* Text color */
             text-align: center;
-            font-weight: 300;
             font-size: 1rem;
+            border-radius: 0.25rem;
         }        
     }
 
@@ -298,6 +296,7 @@
 
     .buttonlogin {
         background-color: var(--color-titre);
+    
     }
 
     .buttonlogin:hover {
@@ -307,5 +306,19 @@
 
     .buttonlogin:not(:hover) {
     transition: 0.7s ease;
+    }
+
+    .buttonlogin {
+        width: 60%;
+        height: 2.5rem;
+        margin: 0.6rem auto;
+        display: block;
+        color: #fff;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 1.2rem;
+        transition: .2s ease-in;
+        cursor: pointer;
     }
 </style>

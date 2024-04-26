@@ -31,6 +31,35 @@
         </nav>
 </footer>
 
-<style>
+<style lang="scss">
+    .logofooter {
+        width: 4rem;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        object-fit: cover;
+    }
 
+    .linksfooter {
+        width: 18rem;
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0rem 1rem 5rem;
+    }
+
+    .navfooter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialicons {
+        margin-left: 4rem;
+        margin-top: -4rem;
+        display: flex;
+    }
+
+    .socialicons img {
+        width: 2.4rem;
+        margin-left: 1rem;
+    }
 </style>

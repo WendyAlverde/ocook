@@ -102,13 +102,13 @@
             }),
         })
 
-    // 4. If Directus tells us everything is OK, say "THANK YOU NICO"
+        // 4. If Directus tells us everything is OK
         if (response.ok) {
             // 5. Redirect the user to the recipes page
             push('/recipes')
             succesMessage = "Votre recette est ajouté !"
         }
-        // 6. If Directus tells us it's not OK, blame Nico
+        // 6. If Directus tells us it's not OK
         else {
             recipeError = "Oups, une erreur est survenue pendant l'enregistrement. Tous les champs n'ont pas été renseignés."
         }
@@ -126,28 +126,29 @@
 
     Reader.readAsDataURL(file);
 
-    }//function upload recipe picture
+    }
+    //function upload recipe picture
     function changeInputFil(event){
-    var inputFile = event.currentTarget,
-        name = inputFile.name,
-        files = inputFile.files,
-        allowedTypes = ['png', 'jpg', 'jpeg'],
-        imgType;  
-    document.getElementById('preview-'+ name).innerHTML ='';
-    for (var i = 0 ; i < files.length ; i++) {
-        imgType = files[i].name.split('.');
-        imgType = imgType[imgType.length - 1];
-        if(allowedTypes.indexOf(imgType) != -1) {
-        createThumbnail(files[i],name);
-        }//if
-    }//for
+        var inputFile = event.currentTarget,
+            name = inputFile.name,
+            files = inputFile.files,
+            allowedTypes = ['png', 'jpg', 'jpeg'],
+            imgType;  
+        document.getElementById('preview-'+ name).innerHTML ='';
+        for (var i = 0 ; i < files.length ; i++) {
+            imgType = files[i].name.split('.');
+            imgType = imgType[imgType.length - 1];
+            if(allowedTypes.indexOf(imgType) != -1) {
+                createThumbnail(files[i],name);
+            }//if
+        }//for
     }//function 
 
     document.addEventListener('DOMContentLoaded',function(){
-    var fileInput = document.forms['formRecipe'].querySelectorAll('[type=file]');
-    for(var k = 0; k < fileInput.length;k++){
-        fileInput[k].addEventListener('change', changeInputFil, false);
-    }//for
+        var fileInput = document.forms['formRecipe'].querySelectorAll('[type=file]');
+        for(var k = 0; k < fileInput.length;k++){
+            fileInput[k].addEventListener('change', changeInputFil, false);
+        }//for
     });
      //=====  add recipe pictures =====//
 
@@ -176,8 +177,8 @@
         <button role="button" class="formrecipes" aria-pressed="false" aria-label="Ajouter une recette">Ajouter une recette ?</button>
     </section> -->
     <!-- Recipe Submission Form -->
-    <div class="accordion-item wrapper">
-        <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté de la recette">
+    <div class="accordion-item">
+        <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté du formulaire de recette">
             {showAnswer ? 'Replier' : 'Proposer une recette'}
         </button>
         <div class="answer {showAnswer ? 'show' : ''}">
@@ -245,82 +246,107 @@
 </main>
 
 <style lang="scss">
-// Image size
+    // Image size
+    .imgPreview{
+        max-width:15rem;
+        max-height:15rem;
+    }
 
-.imagePreview { 
-    //size pictures for recipes in the scss file  
-}
+    /** ==== Start Add Recipes ==== **/
+    .formrecipes  {
+        background-color: var(--brown);
+        border-radius: 0.8rem;
+        color: var(--background-body);
+        padding: 1rem 2rem;
+        margin: 1rem;
+        border: none;
+    }
 
-/** ==== Start Add Recipes ==== **/
-.addRecipe-inputRow {
-    display: block;
-    margin-left: 1.5em;
-}
+    .addRecipe-inputRow {
+        display: block;
+        margin-left: 1.5em;
+    }
 
-.recipe-name{
-    min-height: 3em;
-    min-width: 93%;
-    max-width: 93%;
-    margin-bottom: 1em;
-}
+    .recipe-name{
+        min-height: 3em;
+        min-width: 93%;
+        max-width: 93%;
+        margin-bottom: 1em;
+    }
 
-fieldset legend {
-    margin-left: 0.3em;
-    font-family: MegantВ-Personal-Use;
-    letter-spacing: 0.2em;
-    margin-left: 1.5em;
-}
+    fieldset legend {
+        margin-left: 0.3em;
+        font-family: MegantВ-Personal-Use;
+        letter-spacing: 0.2em;
+        margin-left: 1.5em;
+    }
 
-label { 
-    font-family: MegantВ-Personal-Use;
-    letter-spacing: 0.2em;
-}
+    label { 
+        font-family: MegantВ-Personal-Use;
+        letter-spacing: 0.2em;
+    }
 
-.checkbox-line label {
-    display: flex;
-    align-items: center;
-}
+    .checkbox-line label {
+        display: flex;
+        align-items: center;
+    }
 
-.checkbox-line input {
-    width: 7em;
-}
+    .checkbox-line input {
+        width: 7em;
+    }
 
-.checkbox-input { 
-    width: 2rem;
-    height: 1.2rem;
-}
+    .checkbox-input { 
+        width: 2rem;
+        height: 1.2rem;
+    }
 
-input[type=file]::file-selector-button {
-    background-color: var(--backgroundcomponent);
-    border: none;
-    border-radius: 2em;
-    box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
-    margin-right: 1em;
-    cursor: pointer;
-}
+    input[type=file]::file-selector-button {
+        background-color: var(--backgroundcomponent);
+        border: none;
+        border-radius: 2em;
+        box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
+        margin-right: 1em;
+        cursor: pointer;
+    }
 
-.recipe-steps {
-    min-height: 3em;
-    max-height: 50em;
-    min-width: 93%;
-    max-width: 93%;
-    margin-bottom: 1em;
-}
+    .recipe-steps {
+        min-height: 3em;
+        max-height: 50em;
+        min-width: 93%;
+        max-width: 93%;
+        margin-bottom: 1em;
+    }
 
-.buttonRecipe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-}
+    .buttonRecipe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+    }
 
-.buttonRecipe button {
-    background-color: var(--backgroundcomponent);
-    border: none;
-    box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
-    padding: 0.5em 1em;
-    border-radius: 1em;
-    cursor: pointer;
-}
-/** ==== End Add Recipes ==== **/
+    .buttonRecipe button {
+        background-color: var(--backgroundcomponent);
+        border: none;
+        box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
+        padding: 0.5em 1em;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+    .accordion-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .accordion-link {
+        width: 75%;
+    }
+
+    // ===== Start Responsive Desktop ====
+    @media (min-width: 769px) {
+
+    }
+
+    /** ==== End Add Recipes ==== **/
 </style>
