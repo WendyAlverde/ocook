@@ -29,10 +29,12 @@
         <div class="contentAccordeon">
 
             <!-- Ingredients list -->
+            <h4>Liste des ingredients</h4>
             <div class="ingredientsList">
                 <p>{accordeon.ingredients}</p>
             </div>
             <!-- To-do list -->
+            <h4>Etapes de la recette</h4>
             <div class="todoList">
                 <p>{accordeon.to_do_list}</p>
             </div>
