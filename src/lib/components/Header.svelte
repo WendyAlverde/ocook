@@ -184,8 +184,7 @@
         font-weight: 100;
         border: noheader img;
         outline: none;
-        color: var(--color-titre
-        );
+        color: var(--color-titre);
         padding-right: 2rem;
         width: 0px;
         position: absolute;

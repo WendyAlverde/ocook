@@ -37,6 +37,15 @@
     --dark-purple: #3C0753;
     --purple: #720455;
     --light-purple: #910A67;
+    // new color
+    --apple-green: #39aa39;
+    --dark-green: #07533c;
+    --light-green: #c0ffc0;
+    --salmon-pink: #ff8d8d;
+    --violet:#8d8dff;
+    --light-violet: #9812d2;
+
+    // --backgroundsection: rgba(248, 130, 130, 0.377);
 }
 
 // Titles
@@ -94,13 +103,13 @@ img {
 
 /** ================ Start Sections ================ **/
 .backgroundcomponent {
-    background-color: var(--backgroundcomponent);
+    background-color: #ff8d97;
     box-shadow: 0.10rem 0.10rem 0.30rem 0.20rem black;
     
 }
 
 .backgroundsection {
-    background-color: var(--backgroundsection);
+    background-color: #ffd5bd5d;
     margin: 1.5rem;
     padding: 1rem;
     text-align: center;
@@ -120,11 +129,11 @@ img {
     display: inline-block;
     font-weight: bold;
     line-height: 1;
-    border-radius: 0.7em;
+    border-radius: 1rem;
     position: relative;
     min-width: 8.23em;
     font-size: 1.25rem;
-    background-color: var(--brown);
+    background-color: var(--dark-green);
     color: var(--backgroundsection);
     height: 2em;
     border: none;
@@ -167,12 +176,12 @@ img {
 // cards
 .framerestaurants, .framerecipes {
     margin: 0.7rem;
-    text-align: center;
     display: inline-block;
     padding-top: 1rem;
     width: 13rem;
 }
 
+// pictures
 .restaurants, .recipes {
     height: 8rem;
     width: 8rem;
@@ -186,7 +195,6 @@ img {
 
 .infoRecipe {
     height: 3.5rem;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,7 +264,6 @@ img {
     justify-content: center;
     align-items: center;
 }
-
 /** ================  End Recipes/Reviews ================**/
 
 /** ================ Start Responsive Mobile ================ **/
@@ -452,17 +459,7 @@ img {
     }
     /** End header **/
 
-    /** Start Recipes/Reviews**/
-
-    .sixFilters {
-        display: flex;
-        justify-content: center;
-    }
-
-    /** End Recipes/Reviews**/
-
     /** Start About us **/
-    
     .aboutMe {
         display: flex;
     }
@@ -509,19 +506,21 @@ img {
     width: 5em;
     margin-top: 1em;
     margin-left: 0.4em;
-    background-color: var(--brown);
-    border: 5px solid var(--beige);
-    color: var(--backgroundsection);
+    background-color: var(--light-green);
+    border: 5px solid var(--apple-green);
+    color: var(--color-titre);
     cursor: pointer;
     }
 
     .menu-nav a:hover{
     border-radius:10px;
-    background-color: var(--backgroundcomponent);
-    color: var(--dark-red);
-    border: 5px solid var(--brown);
+    background-color: var(--apple-green);
+    color: white;
+    border: 5px solid var(--light-green);
     transform: scale(1.2, 1.2);
     transition: 0.7s ease;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
     }
 
     .menu-nav a:not(:hover) {
@@ -547,7 +546,6 @@ img {
         width: 9em;
         }
     }
-    
     /** End Nav Header **/
 }
 /** ================ End Responsive Desktop ================ **/

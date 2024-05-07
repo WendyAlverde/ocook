@@ -14,6 +14,6 @@
         font-style: italic;
         font-size : 1rem;
         border: none;
-        background-color: var(--backgroundsection);
+        background: none;
     }
 </style>

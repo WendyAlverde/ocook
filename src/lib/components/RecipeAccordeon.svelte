@@ -21,33 +21,24 @@
         <!-- Button text changes based on accordion state -->
         {showAnswer ? 'Replier' : 'Voir plus'}
     </button>
+
     <!-- Accordion content -->
     <div class="answer {showAnswer ? 'show' : ''}">
         <div class="headerAccordeon">
         </div>
-        <!-- Contenu de l'accordéon -->
+        <!-- Accordion's content -->
         <div class="contentAccordeon">
-
             <!-- Ingredients list -->
             <h4>Liste des ingredients</h4>
             <div class="ingredientsList">
                 <p>{accordeon.ingredients}</p>
             </div>
             <!-- To-do list -->
-            <h4>Etapes de la recette</h4>
+            <h4>Étapes de la recette</h4>
             <div class="todoList">
                 <p>{accordeon.to_do_list}</p>
             </div>
         </div>
     </div>
 </div>
-
-<style lang="scss">
-    div {
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1;
-    }
-</style>
 

@@ -18,7 +18,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
         // 3. Return the recipes
         return json.data
@@ -40,7 +40,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log('Categories', json.data)
+        // console.log('Categories', json.data)
 
         // 3. Return the categories
         return json.data
@@ -170,12 +170,8 @@
         {/await}
         <!-- Pagination -->
         <Pagination />
-        
     </section>
 
-    <!-- <section class="backgroundsection">
-        <button role="button" class="formrecipes" aria-pressed="false" aria-label="Ajouter une recette">Ajouter une recette ?</button>
-    </section> -->
     <!-- Recipe Submission Form -->
     <div class="accordion-item">
         <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté du formulaire de recette">
@@ -190,7 +186,7 @@
                     <textarea class="recipe-name" type="text" name="recette" placeholder="Exemple : Tarte au citron.." required bind:value={recipeData.name}></textarea>
                 </label>
                 <!-- Choose Categories -->
-                <fieldset>  <!--bind:value={recipeData.categories}-->
+                <fieldset>
                     <legend>
                         Choisir un ou plusieurs filtres :
                     </legend>
@@ -342,11 +338,5 @@
     .accordion-link {
         width: 75%;
     }
-
-    // ===== Start Responsive Desktop ====
-    @media (min-width: 769px) {
-
-    }
-
     /** ==== End Add Recipes ==== **/
 </style>

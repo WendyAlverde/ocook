@@ -26,7 +26,7 @@
         // 2.1 retrieve the API response and convert it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
     // 3. return recipes
         return json.data
@@ -48,7 +48,7 @@
         // 2.1 retrieve the API response and convert it to an object
         const json = await response.json()
 
-        console.log(json.data)
+        // console.log(json.data)
 
     // 3. return reviews
         return json.data
@@ -274,7 +274,7 @@
         width: $dot-size;
         height: $dot-size;
         opacity: .6;
-        background-color: var(--red);
+        background-color: var(--salmon-pink);
         border-radius: 50%;
         transition: .4s;
 

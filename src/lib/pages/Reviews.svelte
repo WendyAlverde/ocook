@@ -1,6 +1,4 @@
 <script>
-    import {link} from "svelte-spa-router"
-
     import {directus} from "../../utils/directus";
 
     import ReviewCard from "../components/ReviewCard.svelte";
@@ -19,7 +17,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log(json.data)
+        // console.log(json.data)
 
         // 3. Return the reviews
         return json.data
