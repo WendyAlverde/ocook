@@ -62,4 +62,9 @@
         width: 2.4rem;
         margin-left: 1rem;
     }
+    a {
+        color: var(--color-titre);
+        font-weight: bold;
+    }
+    
 </style>

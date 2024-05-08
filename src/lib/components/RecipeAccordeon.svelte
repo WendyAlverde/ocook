@@ -3,7 +3,7 @@
     export let accordeon;
 
     // Base URL for image assets
-    const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
+    // const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
 
     // Variable to control accordion visibility
     let showAnswer = false;

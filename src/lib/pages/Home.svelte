@@ -216,6 +216,15 @@
         flex-direction: column;
         align-items: center;
     }
+
+    a {
+        color: var(--color-titre);
+        font-weight: bold;
+        border: 0.2rem #030637 solid;
+        padding: 0.6rem;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+    }
         /** ==== Start Carousel ==== **/
     $nb-slides: 4;
 
