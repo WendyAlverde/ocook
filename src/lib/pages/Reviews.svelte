@@ -1,6 +1,4 @@
 <script>
-    import {link} from "svelte-spa-router"
-
     import {directus} from "../../utils/directus";
 
     import ReviewCard from "../components/ReviewCard.svelte";
@@ -19,7 +17,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        console.log(json.data)
+        // console.log(json.data)
 
         // 3. Return the reviews
         return json.data
@@ -33,6 +31,7 @@
 <main role="main">
     <!-- Main section for displaying restaurant reviews -->
     <h1 lang="en">Reviews</h1>
+    <!-- <p>Ici, vous trouverez mes <em lang="en">reviews</em> détaillées des restaurants que j'ai eu le plaisir de visiter, vous invitant à découvrir de nouveaux horizons culinaires à travers mes expériences.</p> -->
     <section class="backgroundsection">
     <!-- Display loading message while reviews are being fetched -->
         {#await reviews}

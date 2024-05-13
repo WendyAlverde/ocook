@@ -1,0 +1,44 @@
+# Recipes
+###
+GET http://0.0.0.0:8055/items/Recipes?fields=*,categories.Categories_id.name,users.first_name HTTP/1.1
+
+###
+http://0.0.0.0:8055/items/Recipes  HTTP/1.1
+
+# Categories
+###
+http://0.0.0.0:8055/items/Categories?fields=id,name
+
+###
+http://0.0.0.0:8055/items/Recipes?fields=*,categories.Categories_id.name,&filter[categories.Categories_id.name][_eq]=${category}
+
+###
+http://0.0.0.0:8055/users?fields=first_name
+content-type: application/json
+
+{
+    "email": "fromage1111@domain.com",
+    "password": "1234",
+    "first_name": "uuuh"
+}
+
+###
+http://0.0.0.0:8055/Users?fields=first_name
+content-type: application/json
+
+{
+    "email": "fromage1111@domain.com",
+    "password": "1234",
+    "first_name": "uuuh"
+}
+
+# Auth
+###
+POST http://0.0.0.0:8055/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "1234"
+}
+

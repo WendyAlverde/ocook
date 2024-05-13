@@ -26,7 +26,7 @@
         // 2.1 retrieve the API response and convert it into an object
         const json = await response.json()
 
-        console.log('Recipes', json.data)
+        // console.log('Recipes', json.data)
 
     // 3. return recipes
         return json.data
@@ -48,7 +48,7 @@
         // 2.1 retrieve the API response and convert it to an object
         const json = await response.json()
 
-        console.log(json.data)
+        // console.log(json.data)
 
     // 3. return reviews
         return json.data
@@ -211,161 +211,174 @@
 </main>
 
 <style lang="scss">
-.backgroundsection.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-    /** ==== Start Carousel ==== **/
-$nb-slides: 4;
-
-.center {
-    display: flex;
-    align-items: center; // horizontal
-    justify-content: center; // vertical
-}
-
-.carousel-wrapper {
-    display: flex;
-    position: relative;
-    max-width: 37rem;
-    margin: 3.1rem;
-
-    input {
-        display: none;
+    .backgroundsection.home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
 
-// carousel
-.carousel {
-    overflow: hidden;
-    border-radius: 0.9rem;
+    a {
+        color: var(--color-titre);
+        font-weight: bold;
+        border: 0.2rem #030637 solid;
+        padding: 0.6rem;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+    }
+        /** ==== Start Carousel ==== **/
+    $nb-slides: 4;
 
-    ul {
-        @extend .center;
+    .center {
+        display: flex;
+        align-items: center; // horizontal
+        justify-content: center; // vertical
+    }
+
+    .carousel-wrapper {
+        display: flex;
         position: relative;
-        list-style: none;
+        max-width: 37rem;
+        margin: 3.1rem;
+
+        input {
+            display: none;
+        }
+    }
+
+    // carousel
+    .carousel {
         overflow: hidden;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100% * $nb-slides;
-        transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
-    }
+        border-radius: 0.9rem;
 
-    li {
-        width: 100%;
+        ul {
+            @extend .center;
+            position: relative;
+            list-style: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100% * $nb-slides;
+            transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
 
-        img {
+        li {
             width: 100%;
-            height: 25rem;
-            object-fit: cover;
+
+            img {
+                width: 100%;
+                height: 25rem;
+                object-fit: cover;
+            }
         }
     }
-}
 
-// navigation dots
-.nav-dot {
-    $dot-size: 0.9rem;
-    position: absolute;
-    cursor: pointer;
-    margin-left: -$dot-size / 2;
-    bottom: -$dot-size * 1.5;
-    width: $dot-size;
-    height: $dot-size;
-    opacity: .6;
-    background-color: var(--red);
-    border-radius: 50%;
-    transition: .4s;
+    // navigation dots
+    .nav-dot {
+        $dot-size: 0.9rem;
+        position: absolute;
+        cursor: pointer;
+        margin-left: -$dot-size / 2;
+        bottom: -$dot-size * 1.5;
+        width: $dot-size;
+        height: $dot-size;
+        opacity: .6;
+        background-color: var(--salmon-pink);
+        border-radius: 50%;
+        transition: .4s;
 
-    &:hover {
-        opacity: .8;
-        transform: scale(1.2);
-    }
-
-    &:active {
-        transform: scale(0.9);
-    }
-}
-
-// goes from 1 to 5.
-@for $n from 1 through $nb-slides {
-
-    // arranges the navigation dots horizontally
-    .nav-dot[for=slide#{$n}] {
-        left: calc(50% + ((#{$n} - 1) - ((#{$nb-slides} - 1) / 2)) * 40px);
-    }
-
-    #slide#{$n}:checked {
-
-        // moves the carousel to the right slide
-        &~.carousel ul {
-            left: -100% * ($n - 1)
+        &:hover {
+            opacity: .8;
+            transform: scale(1.2);
         }
 
-        // highlights the selected navigation dot
-        &~.nav-dot[for=slide#{$n}] {
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    // goes from 1 to 5.
+    @for $n from 1 through $nb-slides {
+
+        // arranges the navigation dots horizontally
+        .nav-dot[for=slide#{$n}] {
+            left: calc(50% + ((#{$n} - 1) - ((#{$nb-slides} - 1) / 2)) * 40px);
+        }
+
+        #slide#{$n}:checked {
+
+            // moves the carousel to the right slide
+            &~.carousel ul {
+                left: -100% * ($n - 1)
+            }
+
+            // highlights the selected navigation dot
+            &~.nav-dot[for=slide#{$n}] {
+                opacity: 1;
+            }
+        }
+    }
+
+    // ARROWS
+    %arrow {
+        $arrow-size: 4rem;
+        display: none; // hidden by default / if commented : Arrows can be seen better but no longer work
+        position: absolute;
+        cursor: pointer;
+        font-weight: bolder;
+        text-shadow: 0 0 0.4rem rgba($color: rgb(255, 255, 255), $alpha: 1);
+        top: 50%;
+        z-index: 1;
+        margin-top: -$arrow-size / 2;
+        height: $arrow-size;
+        font-size: $arrow-size;
+        transition: .2s;
+
+        &:hover {
             opacity: 1;
+            transform: scale(1.5);
+        }
+
+        &:active {
+            transform: scale(1.1);
         }
     }
-}
 
-// ARROWS
-%arrow {
-    $arrow-size: 4rem;
-    display: none; // hidden by default / if commented : Arrows can be seen better but no longer work
-    position: absolute;
-    cursor: pointer;
-    font-weight: bolder;
-    text-shadow: 0 0 0.4rem rgba($color: rgb(255, 255, 255), $alpha: 1);
-    top: 50%;
-    z-index: 1;
-    margin-top: -$arrow-size / 2;
-    height: $arrow-size;
-    font-size: $arrow-size;
-    transition: .2s;
-
-    &:hover {
-        opacity: 1;
-        transform: scale(1.5);
+    .left-arrow {
+        @extend %arrow;
+        left: 0.938rem;
     }
 
-    &:active {
-        transform: scale(1.1);
+    .right-arrow {
+        @extend %arrow;
+        right: 0.938rem;
     }
-}
 
-.left-arrow {
-    @extend %arrow;
-    left: 0.938rem;
-}
+    @function custom-modulo($n) {
+        // this function returns '$n % $nb-slides', except that if the result is 0,
+        // '$nb-slides' is returned.
+        // for exemple, for $nb-slides = 4, possible values are {1, 2, 3, 4}
+        // (and not {0, 1, 2, 3}).
+        @return 1+($nb-slides + (($n - 1) % $nb-slides)) % $nb-slides;
+    }
 
-.right-arrow {
-    @extend %arrow;
-    right: 0.938rem;
-}
+    @for $n from 1 through $nb-slides {
 
-@function custom-modulo($n) {
-    // this function returns '$n % $nb-slides', except that if the result is 0,
-    // '$nb-slides' is returned.
-    // for exemple, for $nb-slides = 4, possible values are {1, 2, 3, 4}
-    // (and not {0, 1, 2, 3}).
-    @return 1+($nb-slides + (($n - 1) % $nb-slides)) % $nb-slides;
-}
+        // when the nth slide is selected,
+        // displays the left-arrow that goes to the (n-1)th slide
+        // and the right arrow that goes to the (n+1)th slide.
+        // don't worry, it loops thanks to the 'custom-modulo' function !
+        #slide#{$n}:checked {
 
-@for $n from 1 through $nb-slides {
-
-    // when the nth slide is selected,
-    // displays the left-arrow that goes to the (n-1)th slide
-    // and the right arrow that goes to the (n+1)th slide.
-    // don't worry, it loops thanks to the 'custom-modulo' function !
-    #slide#{$n}:checked {
-
-        &~.left-arrow[for=slide#{custom-modulo($n - 1)}],
-        &~.right-arrow[for=slide#{custom-modulo($n + 1)}] {
-            display: block;
+            &~.left-arrow[for=slide#{custom-modulo($n - 1)}],
+            &~.right-arrow[for=slide#{custom-modulo($n + 1)}] {
+                display: block;
+            }
         }
     }
-}
-/** ===== End Carousel ==== **/
+    /** ===== End Carousel ==== **/
+
+    main {
+        padding-bottom: 1rem;
+    }
 </style>

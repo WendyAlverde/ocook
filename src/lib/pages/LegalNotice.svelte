@@ -45,8 +45,7 @@
     </section>
 </main>
 
-<!-- CSS -->
-<style>
+<style lang="scss">
     p {
         line-height: 1.2rem;
         font-size: 1rem;
@@ -57,7 +56,7 @@
     }
     
     section {
-            background-color: #FFD5BD;
+            background-color: #ffd5bd5d;
             margin: 1rem 0.8rem 1.8rem 0.8rem;
             padding: 0.5rem 1.2rem 1rem 1.2rem; 
             text-align: justify-all;
@@ -67,7 +66,7 @@
 
     @media screen and (min-width: 769px) {
         section {
-            background-color: #FFD5BD;
+            background-color: #ffd5bd5d;
             margin: 1rem 15rem 5rem 15rem;
             padding: 1rem 5rem 2rem 5rem;
             text-align: center;
