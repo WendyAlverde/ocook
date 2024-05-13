@@ -45,7 +45,8 @@
     --violet:#8d8dff;
     --light-violet: #9812d2;
 
-    // --backgroundsection: rgba(248, 130, 130, 0.377);
+    --backgroundsection-opacity: #ffd5bd5d;
+    --light-green-opacity: ;
 }
 
 // Titles
@@ -81,6 +82,10 @@ h3 {
     justify-content: center;
 }
 
+h4 {
+    margin-top: 1rem;
+}
+
 p {
     font-family: wind;
     font-size: 0.8rem;
@@ -109,7 +114,7 @@ img {
 }
 
 .backgroundsection {
-    background-color: #ffd5bd5d;
+    background-color: var(--backgroundsection-opacity);
     margin: 1.5rem;
     padding: 1rem;
     text-align: center;
@@ -147,7 +152,7 @@ img {
     position: absolute;
     content: "";
     // display: inline-block;
-    background: var(--color);
+    background: red;
     border-radius: 50%;
     transition: transform 1s ease;
     transform: scale(0);
@@ -157,13 +162,13 @@ img {
 .button:before {
     top: -25%;
     left: 20%;
-    background-color: var(--brown);
+    background-color: var(--dark-green);
 }
 
 .button:after {
     bottom: -25%;
     right: 20%;
-    background-color: var(--brown);
+    background-color: var(--dark-green);
 }
 
 .button:hover:before,
@@ -205,7 +210,7 @@ img {
     max-height: 0;
     overflow: hidden;
     position: relative;
-    background-color: var(--brown);
+    background-color: var(--light-green);
     transition: max-height 650ms;
 }
 
@@ -218,8 +223,8 @@ img {
     box-shadow: 0rem 0.25rem 0.25rem black;
 }
 
-.blocAccordeon, .ingredientsList, .todoList, .ourOpinion  {
-    background-color: var(--backgroundsection);
+.blocAccordeon, .ourOpinion  {
+    background-color: var(--backgroundsection-opacity);
 }
 
 .headerAccordeon {
@@ -256,13 +261,6 @@ img {
 
 .answer h3 {
     padding: 0.5em;
-}
-
-.blocAccordeon, .todoList {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 /** ================  End Recipes/Reviews ================**/
 

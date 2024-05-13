@@ -31,6 +31,7 @@
 <main role="main">
     <!-- Main section for displaying restaurant reviews -->
     <h1 lang="en">Reviews</h1>
+    <!-- <p>Ici, vous trouverez mes <em lang="en">reviews</em> détaillées des restaurants que j'ai eu le plaisir de visiter, vous invitant à découvrir de nouveaux horizons culinaires à travers mes expériences.</p> -->
     <section class="backgroundsection">
     <!-- Display loading message while reviews are being fetched -->
         {#await reviews}

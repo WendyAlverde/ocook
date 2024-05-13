@@ -321,7 +321,6 @@
 
     .buttonlogin {
         background-color: var(--color-titre);
-    
     }
 
     .buttonlogin:hover {

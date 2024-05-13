@@ -94,7 +94,7 @@
             <!-- Recipes link -->
             <a class="nav-item" href="/recipes" use:link on:click={toggleMenu}><span class="title-nav">Recettes</span></a>
             <!-- Reviews link -->
-            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}><span class="title-nav">Critiques</span></a>
+            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}><span class="title-nav" lang="en">Reviews</span></a>
             <!-- About us link -->
             <a class="nav-item" href="/aboutus" use:link on:click={toggleMenu}><span class="title-nav">À propos</span></a>
         </nav>
