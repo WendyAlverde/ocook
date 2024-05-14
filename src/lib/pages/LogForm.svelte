@@ -14,7 +14,7 @@
     }
 
     let signupError = ''  // Error message for signup form
-    let signupSuccesMessage = '' 
+    let signupSuccesMessage = '' //Succes message for signup form
 
     /** @param {Event} event */
     async function signup(event) {
@@ -300,9 +300,10 @@
 
     .signIn-buton {
         border: 2px solid var(--color-titre);
-        padding: 0.5em;
+        padding: 0.8rem;
         border-radius: 2em;
         cursor: pointer;
+        
     }
 
     .signIn-buton:hover {

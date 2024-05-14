@@ -47,21 +47,26 @@
         margin-left: 2rem;
     }
 
-    .linksfooter a {
-        color: var(--color-titre);
-        font-weight: bold;
-        margin-left: 1rem;
-    }
+    .linksfooter {
+        a {
+            color: var(--color-titre);
+            font-weight: bold;
+            margin-left: 1rem;
+        }
 
+        li {
+            padding-top: 0.2rem;
+        }
+    }
+    
     .socialicons {
         margin-top: 0.5rem;
         display: flex;
         justify-content: space-between;
-    }
-
-    .socialicons img {
-        width: 1.4rem;
-        margin-left: 1rem;
+        img {
+            width: 1.4rem;
+            margin-left: 1rem;
+        }
     }
 
     @media (min-width:769px) {

@@ -38,15 +38,18 @@
     --purple: #720455;
     --light-purple: #910A67;
     // new color
+    --salmon-pink: #ff8d8d;
+
     --apple-green: #39aa39;
     --dark-green: #07533c;
     --light-green: #c0ffc0;
-    --salmon-pink: #ff8d8d;
     --violet:#8d8dff;
     --light-violet: #9812d2;
-
+    --color-burger: #B98DE1;
+    --add-recipe: #b88de183;
     --backgroundsection-opacity: #ffd5bd5d;
-    --light-green-opacity: ;
+    --color-text-light: aliceblue;
+    
 }
 
 // Titles
@@ -139,7 +142,7 @@ img {
     min-width: 8.23em;
     font-size: 1.25rem;
     background-color: var(--dark-green);
-    color: var(--backgroundsection);
+    color: var(--color-text-light);
     height: 2em;
     border: none;
     cursor: pointer; 
@@ -212,6 +215,7 @@ img {
     position: relative;
     background-color: var(--light-green);
     transition: max-height 650ms;
+    margin: 0 1rem;
 }
 
 .answer.show {
@@ -285,7 +289,7 @@ img {
     #toggle:checked {
         //Any element you need to change the style if menu is open goes here, using the sibling selector (~)
         &~.toggle-container .button-toggle {
-            box-shadow: 0 0 0 12.5rem #D88D60, inset 0 0 0 1.5rem #D88D60;
+            box-shadow: 0 0 0 12.5rem #B98DE1, inset 0 0 0 1.5rem #B98DE1;
 
             &:before {
                 transform: translateY(-50%) rotate(45deg) scale(1);
@@ -506,7 +510,7 @@ img {
     margin-left: 0.4em;
     background-color: var(--apple-green);
     border: 5px solid var(--light-green);
-    color: white;
+    color: var(--color-text-light);
     cursor: pointer;
     }
 

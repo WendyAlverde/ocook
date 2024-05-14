@@ -89,10 +89,10 @@
 
     textarea {
         margin-top: 1em;
-        min-height: 7em;
-        max-height: 10em;
-        min-width: 18em;
-        max-width: 25em;
+        min-height: 7rem;
+        max-height: 20rem;
+        min-width: 15rem;
+        max-width: 15rem;
         border-radius: 1.2em;
         border-style: none;
         padding: 0.5em;
@@ -116,5 +116,14 @@
 
     .presentation {
         line-height: 1.5em;
+    }
+    // Start responsive Desktop
+    @media (min-width: 769px) {
+        textarea {
+            min-height: 8rem;
+            max-height: 30rem;
+            min-width: 25rem;
+            max-width: 25rem;
+        }
     }
 </style>

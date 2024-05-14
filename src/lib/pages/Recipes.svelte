@@ -40,7 +40,7 @@
         // 2.1 Get the API response and parse it into an object
         const json = await response.json()
 
-        // console.log('Categories', json.data)
+        console.log('Categories', json.data)
 
         // 3. Return the categories
         return json.data
@@ -175,7 +175,7 @@
 
     <!-- Recipe Submission Form -->
     <div class="accordion-item">
-        <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté du formulaire de recette">
+        <button class="button accordion-link add-recipe" on:click={showMore} aria-label="Accéder à l'entièreté du formulaire de recette">
             {showAnswer ? 'Replier' : 'Proposer une recette'}
         </button>
         <div class="answer {showAnswer ? 'show' : ''}">
@@ -207,7 +207,7 @@
                 <!-- Add a photo -->
                 <label for="add-photo" class="addRecipe-inputRow">
                     Ajouter une photo :
-                    <input class="add-photo" name="file" type="file" multiple accept=".png, .jpg, .jpeg"  bind:value={recipeData.picture}/>
+                    <input class="add-photo picture" name="file" type="file" multiple accept=".png, .jpg, .jpeg"  bind:value={recipeData.picture}/>
                     <div id="preview-file">
                     </div>
                 </label>
@@ -298,12 +298,13 @@
     }
 
     input[type=file]::file-selector-button {
-        background-color: var(--backgroundcomponent);
+        background-color: var(--dark-green);
         border: none;
         border-radius: 2em;
         box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
         margin-right: 1em;
         cursor: pointer;
+        color: var(--color-text-light);
     }
 
     .recipe-steps {
@@ -322,12 +323,13 @@
     }
 
     .buttonRecipe button {
-        background-color: var(--backgroundcomponent);
+        background-color: var(--dark-green);
         border: none;
         box-shadow: 0.10rem 0.20rem 0.20rem 0.10rem black;
         padding: 0.5em 1em;
         border-radius: 1em;
         cursor: pointer;
+        color: var(--color-text-light);
     }
     .accordion-item {
         display: flex;
@@ -338,6 +340,21 @@
 
     .accordion-link {
         width: 75%;
+    }
+
+    .add-recipe {
+        margin: 0 1.5rem;
+    }
+
+    a {
+        color: var(--color-titre);
+        font-weight: bold;
+    }
+
+    textarea {
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 1rem;
     }
     /** ==== End Add Recipes ==== **/
 </style>

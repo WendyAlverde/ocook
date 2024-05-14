@@ -283,7 +283,7 @@
         width: $dot-size;
         height: $dot-size;
         opacity: .6;
-        background-color: var(--salmon-pink);
+        background-color: var(--light-violet);
         border-radius: 50%;
         transition: .4s;
 
