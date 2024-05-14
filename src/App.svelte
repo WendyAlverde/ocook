@@ -9,6 +9,7 @@
   import Recipes from './lib/pages/Recipes.svelte'
   import Reviews from './lib/pages/Reviews.svelte'
   import AboutUs from './lib/pages/AboutUs.svelte'
+  import Tips from './lib/pages/Tips.svelte'
   import LogForm from './lib/pages/LogForm.svelte'
   import LegalNotice from './lib/pages/LegalNotice.svelte'
   import NotFound from './lib/pages/404.svelte'
@@ -18,6 +19,7 @@
       "/recipes": Recipes,
       "/reviews": Reviews,
       "/aboutus": AboutUs,
+      "/tips": Tips,
       "/logform": LogForm,
       "/legalNotice": LegalNotice,
       "*": NotFound,

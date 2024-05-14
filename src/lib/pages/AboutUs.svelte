@@ -20,7 +20,7 @@
             </figure>
             <!-- Introduction paragraph -->
             <p>
-                Bonjour ! Je suis Alice Ocklecook, passionnée de cuisine et créatrice de ce blog culinaire. Je partage ici mes recettes, astuces et inspirations pour vous aider à découvrir le plaisir de cuisiner et à éveiller vos papilles. Explorez mes créations et laissez-vous inspirer pour des moments gourmands inoubliables !
+                Bonjour ! Je suis Alice Ocklecook, passionnée de cuisine et créatrice de ce blog culinaire. Je partage ici mes recettes, <a href="/tips" class="tips" title="Page d'astuces et inspirations" aria-label="Page d'iastuces et inspirations" use:link>astuces culinaires et inspirations</a> pour vous aider à découvrir le plaisir de cuisiner et à éveiller vos papilles. Explorez mes créations et laissez-vous inspirer pour des moments gourmands inoubliables !
                 À bientôt autour de nos assiettes,
                 Alice Ocklecook.
             </p>
@@ -85,6 +85,11 @@
 
     a {
         padding-top: 0.5em;
+    }
+
+    .tips  {
+        color: var(--color-titre);
+        font-weight: bold;
     }
 
     textarea {
