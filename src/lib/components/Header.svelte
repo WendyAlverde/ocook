@@ -94,7 +94,7 @@
             <!-- Recipes link -->
             <a class="nav-item" href="/recipes" use:link on:click={toggleMenu}><span class="title-nav">Recettes</span></a>
             <!-- Reviews link -->
-            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}><span class="title-nav">Critiques</span></a>
+            <a class="nav-item" href="/reviews" use:link on:click={toggleMenu}><span class="title-nav" lang="en">Reviews</span></a>
             <!-- About us link -->
             <a class="nav-item" href="/aboutus" use:link on:click={toggleMenu}><span class="title-nav">À propos</span></a>
         </nav>
@@ -133,3 +133,91 @@
 </header>
 
 
+<style lang="scss">
+    .sticky{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    header img {
+        padding-bottom: 0.2rem;
+        width: 4rem;
+        display: block;
+        margin: auto;
+    }
+
+    .burgersearch {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .connexion {
+        width: 2.2em;
+        padding-top: 1.2em;
+    }
+
+    input#search {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    // search form
+    #wrapsearch {
+        margin-right: 0.10rem;
+        margin-left: 3rem;
+        display: inline-block;
+        position: relative;
+        height: 3rem;
+        float: right;
+        padding: 0;
+    }
+
+    .search-input[type="text"] {
+        height: 4rem;
+        font-size: 1rem;
+        display: inline-block;
+        font-weight: 100;
+        border: noheader img;
+        outline: none;
+        color: var(--color-titre);
+        padding-right: 2rem;
+        width: 0px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        z-index: 3;
+        transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+        cursor: pointer;
+    }
+
+    // search opening
+    .search-input[type="text"]:focus {
+        width: 14rem;
+        z-index: 1;
+        cursor: text;
+    }
+
+    input[type="submit"] {
+        height: 2.5rem;
+        width: 2rem;
+        display: inline-block;
+        color: var(--color-titre);
+        float: right;
+        background: url(../../assets/images/logos/search.svg) center center no-repeat;
+        background-size: 1.6rem;
+        text-indent: -600rem;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        transition: opacity .4s ease;
+    }
+</style>

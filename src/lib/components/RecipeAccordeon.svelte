@@ -3,7 +3,7 @@
     export let accordeon;
 
     // Base URL for image assets
-    const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
+    // const imageBaseUrl = "http://0.0.0.0:8055/" + 'assets/'
 
     // Variable to control accordion visibility
     let showAnswer = false;
@@ -21,31 +21,24 @@
         <!-- Button text changes based on accordion state -->
         {showAnswer ? 'Replier' : 'Voir plus'}
     </button>
+
     <!-- Accordion content -->
     <div class="answer {showAnswer ? 'show' : ''}">
         <div class="headerAccordeon">
         </div>
-        <!-- Contenu de l'accordéon -->
+        <!-- Accordion's content -->
         <div class="contentAccordeon">
-
             <!-- Ingredients list -->
             <div class="ingredientsList">
+                <h4>Liste des ingredients</h4>
                 <p>{accordeon.ingredients}</p>
             </div>
             <!-- To-do list -->
             <div class="todoList">
+                <h4>Étapes de la recette</h4>
                 <p>{accordeon.to_do_list}</p>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    div {
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1;
-    }
-</style>
 

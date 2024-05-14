@@ -14,7 +14,7 @@
     }
 
     let signupError = ''  // Error message for signup form
-    let signupSuccesMessage = '' 
+    let signupSuccesMessage = '' //Succes message for signup form
 
     /** @param {Event} event */
     async function signup(event) {
@@ -146,24 +146,35 @@
             <!-- Sign-up form -->
             <form method="post" on:submit={signup}>
             <!-- Username input -->
-                <label class="logForm-inputRow">
+                <label class="logForm-inputRow" for="pseudonyme">
                     Pseudonyme
-                    <input type="text" name="username" placeholder="Nom d'utilisateur" required bind:value={signupData.username}>
+                    <input type="text" id="pseudonyme" name="username" placeholder="Nom d'utilisateur" required bind:value={signupData.username}>
                 </label>
                 <!-- Email input -->
-                <label class="logForm-inputRow">
+                <label class="logForm-inputRow" for="email">
                     Adresse e-mail
-                    <input type="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signupData.email}>
+                    <input type="email" id="email" name="email" placeholder="Exemple : email@domain.com" required bind:value={signupData.email}>
                 </label>
                 <!-- Password input -->
-                <label class="logForm-inputRow">
+                <label class="logForm-inputRow" for="mot-de-passe">
                     Mot de passe
-                    <input type="password" name="password" required bind:value={signupData.password}>
+                    <input type="password" id="mot-de-passe" name="password" required bind:value={signupData.password}>
                 </label>
+                <!-- Password security tips -->
+                <div class="logForm-password-security-tips">
+                    <p>Votre mot de passe doit contenir :</p>
+                    <ul>
+                        <li>8 caractères minimum</li>
+                        <li>Au moins 1 lettre majuscule et minuscule</li>
+                        <li>1 caractère spécial minimum (!, @, #, $, %, etc.)</li>
+                        <li>1 chiffre minimum</li>
+                        <li>Éviter les informations personnelles comme votre nom ou votre date de naissance</li>
+                    </ul>
+                </div>
                 <!-- Confirm Password input -->
-                <label class="logForm-inputRow">
+                <label class="logForm-inputRow" for="confirmation-de-mot-de-passe">
                     Confirmation du mot passe
-                    <input type="password" name="password-confirm" required bind:value={signupData.passwordConfirm}>
+                    <input type="password" id="confirmation-de-mot-de-passe" name="password-confirm" required bind:value={signupData.passwordConfirm}>
                 </label>
                 <!-- Signup error message -->
                 {#if signupError}
@@ -180,11 +191,10 @@
                 <button class="buttonlogin" type="submit">
                     S'enregistrer
                 </button>
-    
             </form>
-            <!-- End of sign-up form -->
         </section>
-    
+        <!-- End of sign-up form -->
+
         <!-- Sign-in section -->
         <section class="logForm-section logForm-section-close">
             <!-- Sign-in line -->
@@ -221,10 +231,8 @@
     </div>
 </main>
 
-
 <style lang="scss">
     .logForm {
-
         margin-bottom: 5rem;
 
         &-inputRow {
@@ -264,22 +272,38 @@
             transition: height 0.4s ease-in;
         }
 
+        &-password-security-tips {
+            display: block;
+            width: 60%;
+            margin: 1.2rem auto 1.7rem;
+
+            p {
+                font-size: 0.8rem; 
+                margin-bottom: 0.3rem;
+            }
+            
+            li {
+                font-size: 0.8rem;
+            }
+        }
+
         #signupSuccessMessage {
-            width: 50%; /* You can adjust the width according to your preferences */
-            margin: 1rem auto; /* You can adjust the margins according to your preferences */
-            padding: 1rem; /* You can adjust the padding according to your preferences */
-            color: rgb(13, 105, 13); /* Text color */
+            width: 60%;
+            margin: 1rem auto;
+            padding: 1rem;
+            color: rgb(13, 105, 13);
             text-align: center;
-            font-weight: 300;
             font-size: 1rem;
+            border-radius: 0.25rem;
         }        
     }
 
     .signIn-buton {
         border: 2px solid var(--color-titre);
-        padding: 0.5em;
+        padding: 0.8rem;
         border-radius: 2em;
         cursor: pointer;
+        
     }
 
     .signIn-buton:hover {
@@ -307,5 +331,19 @@
 
     .buttonlogin:not(:hover) {
     transition: 0.7s ease;
+    }
+
+    .buttonlogin {
+        width: 60%;
+        height: 2.5rem;
+        margin: 0.6rem auto;
+        display: block;
+        color: #fff;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 1.2rem;
+        transition: .2s ease-in;
+        cursor: pointer;
     }
 </style>
