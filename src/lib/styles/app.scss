@@ -42,7 +42,8 @@
 
     --apple-green: #39aa39;
     --dark-green: #07533c;
-    --light-green: #30C889;
+    --light-green: #76DB89;
+    // --light-green: #30C889;
     --violet:#8d8dff;
     --light-violet: #9812d2;
     --color-burger: #B98DE1;
@@ -87,6 +88,7 @@ h3 {
 
 h4 {
     margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 p {
@@ -129,6 +131,7 @@ img {
 
 /** ================ Start Buttons ================ **/
 .wrapper {
+    // Padding above the button
     padding: 1.5rem 0;
     filter: url('#goo');
 }
@@ -136,14 +139,12 @@ img {
 .button {
     display: inline-block;
     font-weight: bold;
-    line-height: 1;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     position: relative;
-    min-width: 8.23em;
     font-size: 1.25rem;
     background-color: var(--dark-green);
     color: var(--color-text-light);
-    height: 2em;
+    padding: 0.5rem 3rem;
     border: none;
     cursor: pointer; 
 }
@@ -154,8 +155,7 @@ img {
     height: 3rem;
     position: absolute;
     content: "";
-    // display: inline-block;
-    background: red;
+    background: var(--dark-green);
     border-radius: 50%;
     transition: transform 1s ease;
     transform: scale(0);
@@ -165,13 +165,13 @@ img {
 .button:before {
     top: -25%;
     left: 20%;
-    background-color: var(--dark-green);
+    // background-color: linear-gradient(to bottom, #98FB98 33%, #006400 33%, #98FB98 66%);
 }
 
 .button:after {
     bottom: -25%;
     right: 20%;
-    background-color: var(--dark-green);
+    // background-color: var(--dark-green);
 }
 
 .button:hover:before,
@@ -215,56 +215,33 @@ img {
     position: relative;
     background-color: var(--light-green);
     transition: max-height 650ms;
-    margin: 0 1rem;
+    
 }
 
 .answer.show {
-    max-height: 100rem;
+    max-height: 150rem;
 }
 
-.imgAccordeon, .blocAccordeon, .ingredientsList, .todoList, .ourOpinion  {
+.contentAccordeon {
+    gap: 1em;
+    margin: 1em; 
+}
+
+.ingredientsList, .todoList, .ourOpinion  {
     border-radius: 0.5rem;
     box-shadow: 0rem 0.25rem 0.25rem black;
 }
 
-.blocAccordeon, .ourOpinion  {
+.ourOpinion  {
     background-color: var(--backgroundsection-opacity);
-}
-
-.headerAccordeon {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 1em auto;
-}
-
-.contentAccordeon {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin: 1em;
-}
-
-.imgAccordeon {
-    width : 10rem;
-    height : 10rem;
-}
-
-.blocAccordeon {
-    width: 6em;
-    height: 3em;
 }
 
 .answer p {
     color: var(--color-titre);
-    font-size: 15px;
+    font-size: 1rem;
     padding: 1rem;
     text-align: left;
     line-height: 1.5em;
-}
-
-.answer h3 {
-    padding: 0.5em;
 }
 /** ================  End Recipes/Reviews ================**/
 
@@ -549,5 +526,19 @@ img {
         }
     }
     /** End Nav Header **/
+    .answer {
+        // Width container
+        width: 42rem;
+    }
+    /** Start Accordion **/
+    .contentAccordeon {
+        // width IngredientList and Todolist
+        width: 40rem;
+    }
+
+    .contentAccordeon {
+        display: flex; 
+    }
+    /** End Accordion **/
 }
 /** ================ End Responsive Desktop ================ **/

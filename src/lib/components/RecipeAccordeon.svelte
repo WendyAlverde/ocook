@@ -15,17 +15,15 @@
     }
 </script>
 
-<div class="accordion-item wrapper" role="region">
+<div class="wrapper" role="region"> <!-- accordion-item -->
     <!-- Button to toggle accordion visibility -->
-    <button class="button accordion-link" on:click={showMore} aria-label="Accéder à l'entièreté de la recette">
+    <button class="button" on:click={showMore} aria-label="Accéder à l'entièreté de la recette"> <!-- accordion-link -->
         <!-- Button text changes based on accordion state -->
         {showAnswer ? 'Replier' : 'Voir plus'}
     </button>
 
     <!-- Accordion content -->
     <div class="answer {showAnswer ? 'show' : ''}">
-        <div class="headerAccordeon">
-        </div>
         <!-- Accordion's content -->
         <div class="contentAccordeon">
             <!-- Ingredients list -->
@@ -42,3 +40,4 @@
     </div>
 </div>
 
+<!--  -->
