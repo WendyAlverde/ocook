@@ -381,4 +381,9 @@
     main {
         padding-bottom: 1rem;
     }
+
+    /** ====== Start Responsive Desktop ====== **/
+    @media (min-width: 769px) {
+        
+    }
 </style>
