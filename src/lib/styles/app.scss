@@ -209,17 +209,22 @@ img {
 }
 
 // Accordeons
-.answer {
+.answer, .answerrecipe {
     max-height: 0;
     overflow: hidden;
     position: relative;
     background-color: var(--light-green);
     transition: max-height 650ms;
-    
 }
 
-.answer.show {
+.answer.show, .answerrecipe.show {
     max-height: 150rem;
+}
+
+.answerrecipe {
+    width: 90%;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
 }
 
 .contentAccordeon {
@@ -242,6 +247,15 @@ img {
     padding: 1rem;
     text-align: left;
     line-height: 1.5em;
+}
+
+.information {
+    font-size: 1.2rem;
+    padding: 0.8rem 0.8rem 0.8rem 1rem;
+    // padding-left: 1.2rem;
+    color: var(--color-titre);
+    border: 0.1rem solid #07533c;
+    margin: 0.5rem;
 }
 /** ================  End Recipes/Reviews ================**/
 
@@ -528,16 +542,23 @@ img {
     /** End Nav Header **/
     .answer {
         // Width container
-        width: 42rem;
+        width: 13rem;
     }
     /** Start Accordion **/
     .contentAccordeon {
         // width IngredientList and Todolist
-        width: 40rem;
+        width: 11rem;
     }
 
     .contentAccordeon {
         display: flex; 
+        flex-direction: column;
+    }
+
+    .answerrecipe{
+        margin-left: 1.5rem;
+        border-radius: 0.5rem;
+        width: 75%;
     }
     /** End Accordion **/
 }

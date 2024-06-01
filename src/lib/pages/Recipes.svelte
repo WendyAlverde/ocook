@@ -106,7 +106,7 @@
         if (response.ok) {
             // 5. Redirect the user to the recipes page
             push('/recipes')
-            succesMessage = "Votre recette est ajouté !"
+            succesMessage = "Votre recette est ajouté ! Veuillez actualiser la page pour voir votre recette."
         }
         // 6. If Directus tells us it's not OK
         else {
@@ -178,9 +178,9 @@
         <button class="button accordion-link add-recipe" on:click={showMore} aria-label="Accéder à l'entièreté du formulaire de recette">
             {showAnswer ? 'Replier' : 'Proposer une recette'}
         </button>
-        <div class="answer {showAnswer ? 'show' : ''}">
+        <div class="answerrecipe {showAnswer ? 'show' : ''}">
             <h2>Proposer une recette</h2>
-            <p>Pour proposer une recette il faut être <a href="/logform" title="Page de connexion" aria-label="Page d'inscription et de connexion" use:link>connecté</a>.</p>
+            <p class="information">Pour proposer une recette il faut être <a href="/logform" title="Page de connexion" aria-label="Page d'inscription et de connexion" use:link>connecté</a>.</p>
             <form name="formRecipe" action="" method="post" enctype="multipart/form-data" on:submit={send}>
                 <label class="addRecipe-inputRow">
                     Nom de la recette :
