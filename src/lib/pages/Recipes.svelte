@@ -106,7 +106,7 @@
         if (response.ok) {
             // 5. Redirect the user to the recipes page
             push('/recipes')
-            succesMessage = "Votre recette est ajouté ! Veuillez actualiser la page pour voir votre recette."
+            succesMessage = "Votre recette est ajoutée ! Veuillez actualiser la page pour voir votre recette."
         }
         // 6. If Directus tells us it's not OK
         else {
