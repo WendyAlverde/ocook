@@ -41,7 +41,7 @@
         <p id="conception-developpement">Ce site a été conçu et développé par Wendy Alverde, Nicolas Ugé et Paul Lagadec.</p>
 
         <h3 id="cookies-heading" aria-describedby="description des cookies">Cookies</h3>
-        <p id="description des cookies">Ce site n'utilise aucun cookie.</p>
+        <p id="description des cookies">Ce site utilise des cookies pour mémoriser votre identifiant client lorsque vous vous connectez. Cela nous permet de faciliter votre navigation et d'assurer la sécurité de votre session.</p>
 
         <h3 id="applicable-law-heading" aria-describedby="description de la loi applicable">Loi applicable</h3>
         <p id="description de la loi applicable">Précise la loi applicable en cas de litige concernant le site.</p>

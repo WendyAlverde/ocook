@@ -156,7 +156,8 @@
 
 <main role="main">
     <h1>Recettes</h1>
-    <!-- <p>Vous découvrirez ici une variété de recettes adaptées à tous, des plus petits aux plus grands, pour les amateurs comme les passionnés.</p> -->
+    <p class="intro">Vous trouverez ici une variété de recettes pour tous les âges, des plus petits aux plus grands, adaptées aussi bien aux amateurs qu'aux passionnés</p>
+    <p class="intro">L'ajout de recettes et les filtres seront bientôt disponibles.</p>
     <!-- Recipe Filter -->
     <Filter />
 

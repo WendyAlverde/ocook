@@ -47,9 +47,7 @@
 
 <!-- CSS -->
 <style lang="scss">
-    h2 {
-        margin-top: 3rem;
-    }
+
     .filter-name {
         color: var(--violet);
         font-size: 0.8rem;

@@ -9,7 +9,7 @@
 
 <footer class="backgroundcomponent" role="contentinfo">
     <!-- O'Cook logo -->
-    <img class = "logofooter" src={ocooklogo} alt="Logo O'Cook">
+    <a href="/"><img class="logofooter" src={ocooklogo} alt="Logo O'Cook"></a>
     <!-- Footer navigation -->
     <nav class = "navfooter" role="navigation">
         <!-- Footer links -->
@@ -44,7 +44,8 @@
 
     nav {
         text-align: center;
-        margin-left: 2rem;
+        margin: 0.5rem 2rem;
+        width: 100%;
     }
 
     .linksfooter {
@@ -52,10 +53,12 @@
             color: var(--color-titre);
             font-weight: bold;
             margin-left: 1rem;
+            font-size: 1.2rem;
         }
 
         li {
             padding-top: 0.2rem;
+            margin: 0.5rem  0;
         }
     }
     

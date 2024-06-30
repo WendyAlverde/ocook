@@ -10,7 +10,7 @@
   import Reviews from './lib/pages/Reviews.svelte'
   import AboutUs from './lib/pages/AboutUs.svelte'
   import Tips from './lib/pages/Tips.svelte'
-  import LogForm from './lib/pages/LogForm.svelte'
+  // import LogForm from './lib/pages/LogForm.svelte'
   import LegalNotice from './lib/pages/LegalNotice.svelte'
   import NotFound from './lib/pages/404.svelte'
 
@@ -20,7 +20,7 @@
       "/reviews": Reviews,
       "/aboutus": AboutUs,
       "/tips": Tips,
-      "/logform": LogForm,
+      // "/logform": LogForm,
       "/legalNotice": LegalNotice,
       "*": NotFound,
   }
