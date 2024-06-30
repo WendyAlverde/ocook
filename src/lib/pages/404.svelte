@@ -3,42 +3,41 @@
     import {link} from "svelte-spa-router"
 </script>
 
-<main role="main">
-    <div class="background404" role="main" aria-labelledby="error-heading">
-        <div class="blur">
-            <section class="error">
-                <p>Erreur 404, la page que vous recherchez n'a pas été trouvée.</p>
-                <ul>
-                    <li>Retournez à la <a href="/" use:link>page d'accueil</a> pour explorer d'autres contenus.</li>
-                    <li>Si vous pensez qu'il s'agit d'une erreur, <a href="/aboutus" use:link>contactez-nous</a> pour obtenir de l'aide.</li>
-                </ul>
-            </section>
-        </div>
+<!-- ========================= Ce que chat GPT propose -->
+<div class="page-404">
+    <div class="error">
+        <p>Erreur 404, la page que vous recherchez n'a pas été trouvée.</p>
+        <p>Retournez à la <a href="/" class="home-link" use:link>page d'accueil</a> pour explorer d'autres contenus.</p>
     </div>
-</main>
+</div>
 
 <style lang="scss">
-    .background404 {
-        background-image: url('../../assets/images/backgrounds/404sushi.webp');
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.page-404 {
+    height: 75vh;
+    background: url('../../assets/images/backgrounds/404sushi.webp') no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction:column-reverse;
+    align-items: center;
+    text-align: center;
 
-    .blur {
+    & .error {
+    // blur
         background-color: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(0.12rem);
         border-radius: 0.5rem;
         padding: 0.5rem;
+        margin: 1rem;
     }
-
-    .error {
-        text-align: center;
-        line-height: 2rem;
-        font-weight: bold;
+    & p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
         color: var(--color-titre);
     }
+
+    & a {
+        color: var(--light-violet);
+        font-weight: bold;
+    }
+}
 </style>

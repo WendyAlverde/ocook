@@ -117,6 +117,11 @@
 
 <main role="main" aria-labelledby="home-heading">
     <h1 id="home-heading">Accueil</h1>
+    <section class="intro">
+        <p>Bienvenue sur notre site O'Cook !</p>
+        <p>Vous y trouverez d'excellentes recettes et des avis de restaurants, tous rédigés par Alice Ocklecook.</p>
+        <p>Des améliorations du site sont prévues pour la connexion, l'ajout de recettes par les utilisateurs connectés, et la possibilité de contacter Alice Ocklecook.</p>
+    </section>
     <!-- carousel -->
     <section class="carousel" role="region" aria-labelledby="carousel-heading">
         <h2 id="carousel-heading">Recettes de la semaine</h2>
@@ -191,7 +196,7 @@
 
     <!-- This section displays a list of reviews -->
     <section class="backgroundsection home" role="region" aria-labelledby="reviews-heading">
-        <h2 id="reviews-heading" lang="en">Reviews</h2>
+        <h2 id="reviews-heading">Avis</h2>
         <!-- If reviews are being loaded, display a loading message -->
         {#await reviews}
             <p>Chargement des critiques de restaurants...</p>
@@ -202,7 +207,7 @@
             {/each}
         {/await}
         <!-- Link to view more reviews -->
-        <a href="/reviews" use:link>Voir plus de reviews</a>
+        <a href="/reviews" use:link>Voir plus d'avis de restaurants</a>
     </section>
 
     <!-- This component represents a filter, likely used for filtering recipes or reviews -->

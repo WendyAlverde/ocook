@@ -109,13 +109,26 @@ input {
 img {
     border-radius: 1.2em;
 }
+
+// Introduction of pages
+.intro {
+    margin: 1.5rem;
+    text-align: center;
+    color: var(--dark-green);
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.intro p {
+    font-size: 1rem;
+    margin-top: 0.6rem;
+}
 /** ================ End Global Style ================ **/
 
 /** ================ Start Sections ================ **/
 .backgroundcomponent {
     background-color: var(--violet);
     box-shadow: 0.10rem 0.10rem 0.30rem 0.20rem black;
-    
 }
 
 .backgroundsection {
@@ -304,6 +317,7 @@ img {
                 height: 2.5rem;
                 line-height: 2.5rem;
                 margin-top: 0;
+                margin-left: 1.6rem;
                 opacity: 1;
                 transform: scaleY(1);
                 transition: $transition-duration, opacity 0.1s;
