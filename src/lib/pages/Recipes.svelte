@@ -181,7 +181,8 @@
         </button>
         <div class="answerrecipe {showAnswer ? 'show' : ''}">
             <h2>Proposer une recette</h2>
-            <p class="information">Pour proposer une recette il faut être <a href="/logform" title="Page de connexion" aria-label="Page d'inscription et de connexion" use:link>connecté</a>.</p>
+            <!-- <p class="information">Pour proposer une recette il faut être <a href="/logform" title="Page de connexion" aria-label="Page d'inscription et de connexion" use:link>connecté</a>.</p> -->
+            <p class="information">La fonctionnalité n'est pas encore opérationnelle.</p>
             <form name="formRecipe" action="" method="post" enctype="multipart/form-data" on:submit={send}>
                 <label class="addRecipe-inputRow">
                     Nom de la recette :
